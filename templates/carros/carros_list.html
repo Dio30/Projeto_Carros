@@ -1,0 +1,115 @@
+{% extends 'base.html' %}
+
+{% load humanize %}
+
+{% block title %} Lista de Carros {% endblock %}
+
+{% block main %}
+
+{% include 'mensagens.html' %}
+
+<div class="row">
+    <div class="col-3">
+        <br><a href="{% url 'perfil' %}" class="btn btn-primary btn-sm">Perfil</a>
+    </div>
+    <div class="col-6">
+        <center><br><h3>Bem Vindo</h3>
+    <form method="GET" action="." class="myform">
+          <br><input type="text" name="nome_do_carro" value="{{ request.GET.nome_do_carro }}" class="p-1 border" 
+            autocomplete="off" placeholder="Digite o nome do carro">
+
+            <button type="submit" class="btn btn-success btn-sm">Buscar</button>
+
+            <a href="{% url 'lista' %}" class="btn btn-info btn-sm">Limpar</a><br><br></form></center>
+    </div>
+    <div class="col">
+        {% if user.is_authenticated %}
+
+            <center><br><b>Olá {{ user.username }}</b>
+                <a href="{% url 'logout' %}" class="btn btn-danger btn-sm" title="Sair" 
+                onclick="return confirm('Tem certeza que deseja sair?')">Sair</a></center><br>
+    
+        {% endif %}
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-">
+        
+    </div>
+        <table class="table table-bordered table-dark">
+            <thead class="mythead">
+                <tr>
+                    <th>Nome do Carro</th>
+                    <th>Detalhes do Carro</th>
+                    <th>Editar</th>
+                    <th>Deletar</th>
+                </tr>
+            </thead>
+            <br><tbody class="mytbody">
+                <tr>
+            {% for carro in object_list %}
+            
+                <td>{{ carro.nome_do_carro }}</td>
+                <td><a href="{% url 'detalhar' carro.pk %}" title="Detalhes" class="btn btn-info btn-sm">Visualizar</td></a>
+                <td><a href="{% url 'editar' carro.pk %}" title="Editar" class="btn btn-warning btn-sm">
+                    <i class="fa fa-pencil" aria-hidden="true"></i></a></td>
+                <td><a href="{% url 'deletar' carro.pk %}" title="Deletar" class="btn btn-danger btn-sm">
+                    <i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    <div class="col-">
+    </div>
+
+</div>
+
+<br><center><a href="{% url 'novo' %}" class="btn btn-primary">Adicionar Carro</a></center><br>
+
+<ul class="pagination justify-content-center">
+    {% if page_obj.has_previous %}
+
+        {% if request.GET.nome_do_carro %}
+
+        <li class="page-item"><a class="page-link" href="?page=1&nome={{ request.GET.nome_do_jogo }}">&laquo; Primeira</a></li>
+        <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}&nome={{ request.GET.nome_do_jogo }}">Anterior</a></li>
+        
+        {% else %}
+
+        <li class="page-item"><a class="page-link" href="?page=1">&laquo; Primeira</a></li>
+        <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}">Anterior</a></li>
+        
+        {% endif %}
+    
+    {% endif %}
+
+    <li class="page-item">
+        <span class="page-link">Pagina {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}.</span>
+    </li>
+    {% if page_obj.has_next %}
+
+        {% if request.GET.nome_do_carro %}
+
+        <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}&nome={{ request.GET.nome_do_carro }}">Próxima</a></li>
+        <li class="page-item"><a class="page-link" href="?page={{ page_obj.paginator.num_pages }}&nome={{ request.GET.nome_do_carro }}">Última</a></li>
+        {% else %}
+
+        <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">Próxima</a></li>
+        <li class="page-item"><a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">Última</a></li>
+        
+        {% endif %}
+
+    {% endif %}
+</ul>
+
+{% endblock %}
+
+{% block footer %}
+<footer class="footer">
+    <div class="container">
+        <br><br>
+        <center><span class="text">Desenvolvido por Dione Rafael Padilha</span></center>
+    </div>
+</footer>
+{% endblock %}

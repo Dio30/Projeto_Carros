@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% load humanize %}
+
+{% load bootstrap %}
+
+{% block title %} Inserir Jogos {% endblock %}
+
+{% block main %}
+
+{% include 'mensagens.html' %}
+<center><h2>{{ titulo }}</h2></center><br>
+    <form method="post" action="." enctype="multipart/form-data">
+        {% csrf_token %}
+        <b>{{ form|bootstrap }}</b>
+        <button type="submit" class="btn btn-success btm-sm">Salvar</button><br><br>
+        <center><a href="{% url 'lista' %}" class="btn btn-primary btm-sm">Para voltar para a lista</a></center>
+    </form>
+{% endblock %}
+
+{% block footer %}
+<footer class="footer">
+    <div class="container">
+        <br><br>
+        <center><span class="text">Desenvolvido por Dione Rafael Padilha</span></center>
+    </div>
+</footer>
+{% endblock %}

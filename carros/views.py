@@ -1,0 +1,108 @@
+from django.shortcuts import get_object_or_404, render
+from .models import Carros
+from django.contrib.messages.views import SuccessMessageMixin
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.urls import reverse_lazy
+from django.views.generic import ListView, CreateView, UpdateView, DeleteView
+from django.views.generic.detail import DetailView
+from django.contrib import messages
+from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
+
+class CarrosList(LoginRequiredMixin, ListView):
+    model = Carros
+    queryset = Carros.objects.order_by('nome_do_carro').all()
+    login_url = reverse_lazy('login')
+    paginate_by = 3
+    
+    def get_queryset(self):
+        self.object_list = Carros.objects.filter(usuario=self.request.user)
+        return self.object_list
+    
+    def get(self, request, *args, **kwargs):
+        pesquisar = self.request.GET.get('nome_do_carro')
+        if pesquisar:
+            self.object_list = self.get_queryset().filter(nome_do_carro__icontains=pesquisar)
+        else:
+            self.object_list = self.get_queryset()
+        context = self.get_context_data(object_list=self.object_list)
+        return self.render_to_response(context)
+    
+class CarrosDetail(LoginRequiredMixin, DetailView):
+    queryset = Carros.objects.all()
+    login_url = reverse_lazy('login')
+    
+    def get_object(self, queryset=None):
+        self.object = get_object_or_404(Carros, pk=self.kwargs['pk'], usuario=self.request.user)
+        return self.object
+    
+class CarrosNew(LoginRequiredMixin, SuccessMessageMixin, CreateView):
+    model = Carros
+    fields = ['nome_do_carro', 'marcas_de_carros', 
+    'valor_do_carro', 'modelos_de_carros', 'fotos_de_carros']
+    success_url = reverse_lazy('lista')
+    success_message = 'Carro adicionado com sucesso'
+    login_url = reverse_lazy('login')
+    
+    def form_valid(self, form):
+        form.instance.usuario = self.request.user
+        url = super().form_valid(form)
+        return url
+    
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+        context['titulo'] = "Cadastro de Carros"
+        return context
+    
+class CarrosUpdate(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
+    model = Carros
+    fields = ['nome_do_carro', 'marcas_de_carros', 
+    'valor_do_carro', 'modelos_de_carros', 'fotos_de_carros']
+    success_url = reverse_lazy('lista')
+    success_message = 'Carro atualizado com sucesso'
+    login_url = reverse_lazy('login')
+    
+    def get_object(self, queryset=None):
+        self.object = get_object_or_404(Carros, pk=self.kwargs['pk'], usuario=self.request.user)
+        return self.object
+    
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+        context['titulo'] = "Editar Carros"
+        return context
+
+class CarrosDelete(LoginRequiredMixin, SuccessMessageMixin, DeleteView):
+    queryset = Carros.objects.all()
+    success_url = reverse_lazy('lista')
+    success_message = 'Carro foi deletado com sucesso'
+    login_url = reverse_lazy('login')
+    
+    def get_object(self, queryset=None):
+        self.object = get_object_or_404(Carros, pk=self.kwargs['pk'], usuario=self.request.user)
+        return self.object
+
+@login_required(login_url = reverse_lazy('login'))
+def perfil(request):
+    if request.method == "GET":
+        return render(request, 'carros/perfil.html')
+    elif request.method == "POST":
+        username = request.POST.get('username')
+        email = request.POST.get('email')
+        
+        usuario = User.objects.filter(username=username).exclude(id=request.user.id)
+        
+        if usuario.exists():
+            messages.error(request, "Já existe um usuario com esse nome")
+            return render(request, template_name='carros/perfil.html')
+        
+        usuario = User.objects.filter(email=email).exclude(id=request.user.id)
+        
+        if usuario.exists():
+            messages.error(request, "Já existe um usuario com esse email")
+            return render(request, template_name='carros/perfil.html')
+        
+        request.user.username = username
+        request.user.email = email
+        request.user.save()
+        messages.success(request, "Dados alterados com sucesso")
+        return render(request, template_name='carros/perfil.html')

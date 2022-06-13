@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% load humanize %}
+
+{% block title %} Perfil do Usuario {% endblock %}
+
+{% block main %}
+
+{% include 'mensagens.html' %}
+
+<center><u><h3>Perfil do Usuario</h3></u></center>
+
+    <form action="{% url 'perfil' %}" method="POST">
+        {% csrf_token %}
+        {{ form }}
+        <b><p>Usuario</p>
+        <input type="text" class="form-control" value="{{ user.username }}" name="username" autocomplete="off">
+        <br>
+        <p>Email</p>
+        <input type="email" class="form-control" value="{{ user.email }}" name="email" autocomplete="off"></b>
+        <br>
+        <input type="submit" class="btn btn-success btm-sm" value="Salvar alterações">
+        
+        <br>
+    </form>
+
+    <br><b><li>O preenchimento do email não é obrigatório, se não quiser inserir um email ou alterar o usuario clique em 
+    <a href="{% url 'lista' %}" class="btn btn-primary btm-sm">Para voltar para a lista</a></li><br>
+
+    <li>Mas se quiser alterar sua senha ou esqueceu da mesma clique em <a href="{% url 'password_reset' %}">Esqueci minha senha</a>, 
+    e será obrigatório cadastrar algum email válido</li></b>
+
+
+{% endblock %}
+
+{% block footer %}
+<footer class="footer">
+    <div class="container">
+        <br><br><br><br><br><br><br><br><br>
+        <center><span class="text">Desenvolvido por Dione Rafael Padilha</span></center>
+    </div>
+</footer>
+{% endblock %}
