@@ -28,11 +28,11 @@ MESSAGE_TAGS = {
 #EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
 EMAIL_BACKEND = "anymail.backends.mailgun.EmailBackend"
-DEFAULT_FROM_EMAIL = "alteracaodesenha@meusite.com"
+DEFAULT_FROM_EMAIL = "alteracao_de_senha@meusite.com"
 SERVER_EMAIL = DEFAULT_FROM_EMAIL
 ANYMAIL = {
-    "MAILGUN_API_KEY": "1e339f99fc43d7bae152435171651eaf-50f43e91-a23068fc",
-    "MAILGUN_SENDER_DOMAIN": "sandbox0bc6a234c4f2423484c1cc3ca0b4641e.mailgun.org",
+    "MAILGUN_API_KEY": config('MAILGUN_API_KEY'),
+    "MAILGUN_SENDER_DOMAIN": config('MAILGUN_SENDER_DOMAIN'),
 }
 
 
