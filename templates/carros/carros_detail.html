@@ -12,13 +12,13 @@
 
 {% include 'mensagens.html' %}
 
-<center><h3>Detalhes do Carro de {{ user.username }}</h3></center><br>
+<br><center><u><h3>Detalhes do Carro de {{ user.username }}</h3></u></center><br>
 
-<li>Nome: {{ object.nome_do_carro }}</li><br>
+<b><li>Nome: {{ object.nome_do_carro }}</li><br>
 <li>Marca: {{ object.marcas_de_carros }}</li><br>
 <li>Valor: {{ object.valor_do_carro }}</li><br>
 <li>Modelo: {{ object.modelos_de_carros }}</li><br>
-<li>Foto: <img src="{{ object.image_url|default_if_none:'#' }}" width="150px" alt="" title="Foto de {{ user.username }}"></li>
+<li>Foto: <img src="{{ object.image_url|default_if_none:'#' }}" width="150px" alt="" title="Foto de {{ user.username }}"></li></b>
 <br>
 <center><a href="{% url 'lista' %}" class="btn btn-primary btm-sm">Para voltar para a lista</a></center>
 
@@ -27,7 +27,7 @@
 {% block footer %}
 <footer class="footer">
     <div class="container">
-        <br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br>
         <center><span class="text">Desenvolvido por Dione Rafael Padilha</span></center>
     </div>
 </footer>

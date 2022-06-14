@@ -1,0 +1,1 @@
+web: gunicorn carros_django.wsgi

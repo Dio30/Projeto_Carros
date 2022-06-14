@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 import os
 from pathlib import Path
 from django.contrib.messages import constants as messages
+from decouple import config
 
 MESSAGE_TAGS = {
         messages.DEBUG: 'alert-secondary',
@@ -24,7 +25,16 @@ MESSAGE_TAGS = {
 
 #Email
 
-EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+#EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+
+EMAIL_BACKEND = "anymail.backends.mailgun.EmailBackend"
+DEFAULT_FROM_EMAIL = "alteracaodesenha@meusite.com"
+SERVER_EMAIL = DEFAULT_FROM_EMAIL
+ANYMAIL = {
+    "MAILGUN_API_KEY": "1e339f99fc43d7bae152435171651eaf-50f43e91-a23068fc",
+    "MAILGUN_SENDER_DOMAIN": "sandbox0bc6a234c4f2423484c1cc3ca0b4641e.mailgun.org",
+}
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -34,10 +44,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-5-v&nk!gib&-0gy=hz93p0_2u*pg2lc!^_g3epij2%ug8rf@sm'
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config('DEBUG', default=False, cast=bool)
 
 ALLOWED_HOSTS = ['*']
 
@@ -57,6 +67,7 @@ INSTALLED_APPS = [
     'static',
     'carros',
     'usuarios',
+    'anymail',
 ]
 
 MIDDLEWARE = [
@@ -103,7 +114,6 @@ DATABASES = {
         'PORT': '5432',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
