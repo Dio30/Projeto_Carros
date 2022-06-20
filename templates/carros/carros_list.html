@@ -9,11 +9,11 @@
 {% include 'mensagens.html' %}
 
 <div class="row">
-    <div class="col-3">
+    <div class="col-2">
         <br><a href="{% url 'perfil' %}" class="btn btn-primary btn-sm">Perfil</a>
     </div>
-    <div class="col-6">
-        <center><br><h3>Bem Vindo</h3>
+    <div class="col-8">
+        <center><br><u><h3>Bem Vindo</h3></u>
     <form method="GET" action="." class="myform">
           <br><input type="text" name="nome_do_carro" value="{{ request.GET.nome_do_carro }}" class="p-1 border" 
             autocomplete="off" placeholder="Digite o nome do carro">
@@ -22,7 +22,7 @@
 
             <a href="{% url 'lista' %}" class="btn btn-info btn-sm">Limpar</a><br><br></form></center>
     </div>
-    <div class="col">
+    <div class="col-2">
         {% if user.is_authenticated %}
 
             <center><br><b>Olá {{ user.username }}</b>
