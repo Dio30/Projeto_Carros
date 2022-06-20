@@ -85,7 +85,7 @@ DATABASES = {
         'USER': 'postgres', # nome do usuario criado depois que é criado o server
         'PASSWORD': '98098694',
         'HOST': 'localhost',
-        'PORT': '5432',
+        'PORT': '5433',
     }
 }
 
