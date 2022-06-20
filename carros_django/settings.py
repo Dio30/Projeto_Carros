@@ -2,6 +2,7 @@ import os
 from pathlib import Path
 from django.contrib.messages import constants as messages
 from decouple import config
+import dj_database_url
 
 MESSAGE_TAGS = {
         messages.DEBUG: 'alert-secondary',
@@ -145,3 +146,5 @@ EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD') #senha criada no app no gmai
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 EMAIL_HOST = 'smtp.gmail.com'
+
+DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
