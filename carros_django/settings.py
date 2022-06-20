@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     'static',
     'carros',
     'usuarios',
-    'anymail',
 ]
 
 MIDDLEWARE = [
@@ -136,11 +135,13 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-#Email
+#Email - para enviar emails no terminal
+#EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
+# Para enviar emails em produção
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST_USER = config('EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
-EMAIL_USE_TLS = config('EMAIL_USE_TLS')
-EMAIL_PORT = config('EMAIL_PORT')
-EMAIL_HOST = config('EMAIL_HOST')
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD') #senha criada no app no gmail em autenticação em 2 fatores
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST = 'smtp.gmail.com'
