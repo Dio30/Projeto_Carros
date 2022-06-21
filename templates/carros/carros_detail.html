@@ -18,7 +18,8 @@
 <li>Marca: {{ object.marcas_de_carros }}</li><br>
 <li>Valor: {{ object.valor_do_carro }}</li><br>
 <li>Modelo: {{ object.modelos_de_carros }}</li><br>
-<li>Foto: <img src="{{ object.image_url|default_if_none:'#' }}" width="150px" alt="" title="Foto de {{ user.username }}"></li></b>
+<li>Foto: <img src="{{ object.image_url|default_if_none:'#' }}" width="150px" alt="" title="Foto de {{ user.username }}" 
+crossorigin="anonymous"></li></b>
 <br>
 <center><a href="{% url 'lista' %}" class="btn btn-primary btm-sm">Para voltar para a lista</a></center>
 
