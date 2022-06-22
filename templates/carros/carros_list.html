@@ -49,9 +49,8 @@
             <br><tbody class="mytbody">
                 <tr>
             {% for carro in object_list %}
-            
                 <td>{{ carro.nome_do_carro }}</td>
-                <td><a href="{% url 'detalhar' carro.pk %}" title="Detalhes" class="btn btn-info btn-sm">Visualizar</td></a>
+                <td><a href="{% url 'detalhar' carro.pk %}" title="Detalhes" class="btn btn-primary btn-sm"><i class="fa fa-eye" aria-hidden="true"></i></td></a>
                 <td><a href="{% url 'editar' carro.pk %}" title="Editar" class="btn btn-warning btn-sm">
                     <i class="fa fa-pencil" aria-hidden="true"></i></a></td>
                 <td><a href="{% url 'deletar' carro.pk %}" title="Deletar" class="btn btn-danger btn-sm">
@@ -72,8 +71,8 @@
 
         {% if request.GET.nome_do_carro %}
 
-        <li class="page-item"><a class="page-link" href="?page=1&nome={{ request.GET.nome_do_jogo }}">&laquo; Primeira</a></li>
-        <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}&nome={{ request.GET.nome_do_jogo }}">Anterior</a></li>
+        <li class="page-item"><a class="page-link" href="?page=1&nome={{ request.GET.nome_do_carro }}">&laquo; Primeira</a></li>
+        <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}&nome={{ request.GET.nome_do_carro }}">Anterior</a></li>
         
         {% else %}
 
