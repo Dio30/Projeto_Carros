@@ -29,7 +29,8 @@
                             <p>Email:</p>
                             <input type="email" class="form-control" value="{{ user.email }}" name="email" autocomplete="off"></b>
                             <br>
-                            <center><input type="submit" class="btn btn-success btm-sm" value="Salvar alterações"></center>
+                            <center><input type="submit" class="btn btn-success btm-sm" value="Salvar alterações">
+                            <a href="{% url 'lista' %}" class="btn btn-primary btm-sm">Voltar</a></center>
                         </form>
                     </div>
                 </div>
@@ -38,9 +39,7 @@
     </div>
 </div>
 
-
-    <br><b><li>O preenchimento do email não é obrigatório, se não quiser inserir um email ou alterar o usuario  
-    <a href="{% url 'lista' %}" >clique aqui</a>.</li><br>
+    <br><b><li>O preenchimento do email não é obrigatório.</li><br>
 
     <li>Se quiser somente trocar a sua senha clique em <a href="{% url 'password_change' %}">alterar senha</a>,
     se esqueceu da senha será <u>obrigatório cadastrar algum email válido aqui</u> e depois 
