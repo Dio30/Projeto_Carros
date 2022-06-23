@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
 {% load humanize %}
 
 {% block title %} Lista de Carros {% endblock %}
@@ -25,7 +27,8 @@
     <div class="col-2">
         {% if user.is_authenticated %}
 
-            <br><b>Olá {{ user.username }}</b>
+        
+        <br><b>Olá {{ user.username }}</b>
                 <a href="{% url 'logout' %}" class="btn btn-danger btn-sm" title="Sair" 
                 onclick="return confirm('Tem certeza que deseja sair?')">Sair</a><br>
         {% else %}
@@ -42,8 +45,8 @@
                 <tr>
                     <th>Nome do Carro</th>
                     <th>Detalhes do Carro</th>
-                    <th>Editar</th>
-                    <th>Deletar</th>
+                    <th>Editar Carro</th>
+                    <th>Deletar Carro</th>
                 </tr>
             </thead>
             <tbody class="mytbody">

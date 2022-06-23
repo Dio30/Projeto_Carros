@@ -81,7 +81,7 @@ class CarrosDelete(LoginRequiredMixin, SuccessMessageMixin, DeleteView):
         self.object = get_object_or_404(Carros, pk=self.kwargs['pk'], usuario=self.request.user)
         return self.object
 
-@login_required(login_url = reverse_lazy('login'))
+@login_required(login_url ='login')
 def perfil(request):
     if request.method == "GET":
         return render(request, 'carros/perfil.html')

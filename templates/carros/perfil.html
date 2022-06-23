@@ -8,9 +8,9 @@
 
 {% include 'mensagens.html' %}
 
-<center><u><h3>Perfil do Usuario</h3></u></center>
+<center><u><h3>Perfil de {{ user.username }}</h3></u></center>
 
-    <form action="{% url 'perfil' %}" method="POST">
+    <form action="{% url 'perfil' %}" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form }}
         <b><p>Usuario</p>
@@ -20,16 +20,14 @@
         <input type="email" class="form-control" value="{{ user.email }}" name="email" autocomplete="off"></b>
         <br>
         <input type="submit" class="btn btn-success btm-sm" value="Salvar alterações">
-        
-        <br>
     </form>
+    <br>
 
     <br><b><li>O preenchimento do email não é obrigatório, se não quiser inserir um email ou alterar o usuario clique em 
     <a href="{% url 'lista' %}" class="btn btn-primary btm-sm">Para voltar para a lista</a></li><br>
 
     <li>Mas se quiser alterar sua senha ou esqueceu da mesma clique em <a href="{% url 'password_reset' %}">Esqueci minha senha</a>, 
     e será obrigatório cadastrar algum email válido</li></b>
-
 
 {% endblock %}
 
