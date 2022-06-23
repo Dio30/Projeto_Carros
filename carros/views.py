@@ -85,10 +85,10 @@ class CarrosDelete(LoginRequiredMixin, SuccessMessageMixin, DeleteView):
 def perfil(request):
     if request.method == "GET":
         return render(request, 'carros/perfil.html')
+    
     elif request.method == "POST":
         username = request.POST.get('username')
         email = request.POST.get('email')
-        
         usuario = User.objects.filter(username=username).exclude(id=request.user.id)
         
         if usuario.exists():
@@ -105,4 +105,5 @@ def perfil(request):
         request.user.email = email
         request.user.save()
         messages.success(request, "Dados alterados com sucesso")
-        return render(request, template_name='carros/perfil.html')
+       
+    return render(request, template_name='carros/perfil.html')

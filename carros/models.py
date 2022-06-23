@@ -1,6 +1,6 @@
-from email.policy import default
 from django.db import models
 from django.contrib.auth.models import User
+from PIL import Image
 
 carros_choice = (
     ('Citroen', 'Citroen'),
@@ -40,7 +40,7 @@ class Carros(models.Model):
     marcas_de_carros = models.CharField(max_length=30, choices=carros_choice)
     valor_do_carro = models.CharField(max_length=50, choices=valor_carros)
     modelos_de_carros = models.CharField(max_length=30, choices=modelos_carros)
-    fotos_de_carros = models.ImageField(upload_to='clients_photos', null=True, blank=True)
+    fotos_de_carros = models.ImageField(upload_to='clients_photos', null=True, blank=True, verbose_name='fotos')
     usuario = models.ForeignKey(User, on_delete=models.CASCADE)
     
     class Meta:

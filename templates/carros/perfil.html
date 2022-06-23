@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 
+{% load bootstrap %}
+
 {% load humanize %}
 
 {% block title %} Perfil do Usuario {% endblock %}
@@ -8,33 +10,48 @@
 
 {% include 'mensagens.html' %}
 
-<center><u><h3>Perfil de {{ user.username }}</h3></u></center>
+<div class="form-content my-3 p-3">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-5">
+                <div class="card shadow-lg border-0 rounded-lg mt-0 mb-3">
+                    <div class="card-header justify-content-center">
+                        <h3 class="font-weight-dark my-4 text-center">Perfil de {{ user.username }}</h3>
+                    </div>
+                    <div class="card-body">
 
-    <form action="{% url 'perfil' %}" method="POST" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ form }}
-        <b><p>Usuario</p>
-        <input type="text" class="form-control" value="{{ user.username }}" name="username" autocomplete="off">
-        <br>
-        <p>Email</p>
-        <input type="email" class="form-control" value="{{ user.email }}" name="email" autocomplete="off"></b>
-        <br>
-        <input type="submit" class="btn btn-success btm-sm" value="Salvar alterações">
-    </form>
-    <br>
+                        <form action="{% url 'perfil' %}" method="POST" enctype="multipart/form-data">
+                            {% csrf_token %}
+                        
+                            <b><p>Usuario:</p>
+                            <input type="text" class="form-control" value="{{ user.username }}" name="username" autocomplete="off">
+                            <br>
+                            <p>Email:</p>
+                            <input type="email" class="form-control" value="{{ user.email }}" name="email" autocomplete="off"></b>
+                            <br>
+                            <center><input type="submit" class="btn btn-success btm-sm" value="Salvar alterações"></center>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-    <br><b><li>O preenchimento do email não é obrigatório, se não quiser inserir um email ou alterar o usuario clique em 
-    <a href="{% url 'lista' %}" class="btn btn-primary btm-sm">Para voltar para a lista</a></li><br>
 
-    <li>Mas se quiser alterar sua senha ou esqueceu da mesma clique em <a href="{% url 'password_reset' %}">Esqueci minha senha</a>, 
-    e será obrigatório cadastrar algum email válido</li></b>
+    <br><b><li>O preenchimento do email não é obrigatório, se não quiser inserir um email ou alterar o usuario  
+    <a href="{% url 'lista' %}" >clique aqui</a>.</li><br>
+
+    <li>Se quiser somente trocar a sua senha clique em <a href="{% url 'password_change' %}">alterar senha</a>,
+    se esqueceu da senha <a href="{% url 'password_reset' %}">clique aqui</a>
+    e será <u>obrigatório cadastrar algum email válido aqui.</li></u></b>
 
 {% endblock %}
 
 {% block footer %}
 <footer class="footer">
     <div class="container">
-        <br><br><br><br><br><br><br><br><br>
+        <br><br><br>
         <center><span class="text">Desenvolvido por Dione Rafael Padilha</span></center>
     </div>
 </footer>

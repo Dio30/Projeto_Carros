@@ -1,7 +1,5 @@
 {% extends 'base.html' %}
 
-{% load static %}
-
 {% load humanize %}
 
 {% block title %} Lista de Carros {% endblock %}
@@ -12,25 +10,24 @@
 
 <div class="row">
     <div class="col-2">
-        <br><a href="{% url 'perfil' %}" class="btn btn-primary btn-sm">Perfil</a>
+        <br><a href="{% url 'perfil' %}" class="btn btn-primary mybtn">Perfil</a>
     </div>
     <div class="col-8">
         <center><br><u><h3>Bem Vindo</h3></u>
     <form method="GET" action=".">
-          <br><input type="search" name="nome_do_carro" value="{{ request.GET.nome_do_carro }}" class="p-1 border" 
+          <br><b>Buscar: </b><input type="search" name="nome_do_carro" value="{{ request.GET.nome_do_carro }}" class="p-1 border" 
             autocomplete="off" placeholder="Digite o nome do carro">
 
-            <button type="submit" class="btn btn-success btn-sm">Buscar</button>
+            <button type="submit" class="btn btn-success btn-sm mybtn">Buscar</button>
 
-            <a href="{% url 'lista' %}" class="btn btn-info btn-sm">Limpar</a><br><br></form></center>
+            <a href="{% url 'lista' %}" class="btn btn-info btn-sm mybtn">Limpar</a><br><br></form></center>
     </div>
     <div class="col-2">
         {% if user.is_authenticated %}
 
-        
-        <br><b>Olá {{ user.username }}</b>
-                <a href="{% url 'logout' %}" class="btn btn-danger btn-sm" title="Sair" 
-                onclick="return confirm('Tem certeza que deseja sair?')">Sair</a><br>
+            <br><b>Olá {{ user.username }}</b>
+                    <a href="{% url 'logout' %}" class="btn btn-danger btn-sm" title="Sair" 
+                    onclick="return confirm('Tem certeza que deseja sair?')">Sair</a><br>
         {% else %}
         {% endif %}
     </div>
@@ -63,12 +60,11 @@
             {% endfor %}
             </tbody>
         </table>
-    <div class="col-">
+    <div class="col-"> 
     </div>
 
 </div>
-
-<br><center><a href="{% url 'novo' %}" class="btn btn-primary">Adicionar Carro</a></center><br>
+<br><center><a href="{% url 'novo' %}" class="btn btn-primary mybtn">Adicionar Carro</a></center><br>
 
 <ul class="pagination justify-content-center">
     {% if page_obj.has_previous %}
@@ -105,7 +101,7 @@
 
     {% endif %}
 </ul>
-
+<center><a href="{% url 'password_change' %}" class="btn btn-info mybtn">Alterar Senha</a></center>
 {% endblock %}
 
 {% block footer %}

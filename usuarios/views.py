@@ -1,9 +1,12 @@
-from django.http import HttpRequest
 from django.shortcuts import render, redirect
 from .forms import UsuariosForm
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth.views import PasswordChangeView
+from django.contrib.messages.views import SuccessMessageMixin
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.urls import reverse_lazy
 
 def register_request(request):
     if request.method == "POST":
@@ -42,3 +45,8 @@ def logout_request(request):
     logout(request)
     messages.success(request, "Voce deslogou com sucesso.")
     return redirect ('login')
+
+class ChangePasswordView(LoginRequiredMixin, SuccessMessageMixin, PasswordChangeView):
+    template_name = 'registration/change_password.html'
+    success_message = "Senha alterada com sucesso"
+    success_url = reverse_lazy('lista')
