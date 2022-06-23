@@ -43,8 +43,8 @@
     <a href="{% url 'lista' %}" >clique aqui</a>.</li><br>
 
     <li>Se quiser somente trocar a sua senha clique em <a href="{% url 'password_change' %}">alterar senha</a>,
-    se esqueceu da senha <a href="{% url 'password_reset' %}">clique aqui</a>
-    e será <u>obrigatório cadastrar algum email válido aqui.</li></u></b>
+    se esqueceu da senha será <u>obrigatório cadastrar algum email válido aqui</u> e depois 
+    <a href="{% url 'password_reset' %}">clique aqui</a> para enviar o email.</li></b>
 
 {% endblock %}
 
