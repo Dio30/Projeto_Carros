@@ -31,3 +31,7 @@ body{
 .mybtn{
     color: #000000;
 }
+
+.mybutton{
+    padding: 0.375rem;
+}
