@@ -8,8 +8,9 @@ from django.views.generic.detail import DetailView
 from django.contrib import messages
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.views import PasswordChangeView
 
-class CarrosList(LoginRequiredMixin, ListView):
+class CarrosList(LoginRequiredMixin, ListView): # para listar os itens
     model = Carros
     queryset = Carros.objects.order_by('nome_do_carro').all()
     login_url = reverse_lazy('login')
@@ -28,7 +29,7 @@ class CarrosList(LoginRequiredMixin, ListView):
         context = self.get_context_data(object_list=self.object_list)
         return self.render_to_response(context)
     
-class CarrosDetail(LoginRequiredMixin, DetailView):
+class CarrosDetail(LoginRequiredMixin, DetailView): # para mostrar os itens em detalhes
     queryset = Carros.objects.all()
     login_url = reverse_lazy('login')
     
@@ -36,7 +37,7 @@ class CarrosDetail(LoginRequiredMixin, DetailView):
         self.object = get_object_or_404(Carros, pk=self.kwargs['pk'], usuario=self.request.user)
         return self.object
     
-class CarrosNew(LoginRequiredMixin, SuccessMessageMixin, CreateView):
+class CarrosNew(LoginRequiredMixin, SuccessMessageMixin, CreateView): # para criar itens novos
     model = Carros
     fields = ['nome_do_carro', 'marcas_de_carros', 
     'valor_do_carro', 'modelos_de_carros', 'fotos_de_carros']
@@ -54,7 +55,7 @@ class CarrosNew(LoginRequiredMixin, SuccessMessageMixin, CreateView):
         context['titulo'] = "Cadastro de Carros"
         return context
     
-class CarrosUpdate(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
+class CarrosUpdate(LoginRequiredMixin, SuccessMessageMixin, UpdateView): # para editar os itens
     model = Carros
     fields = ['nome_do_carro', 'marcas_de_carros', 
     'valor_do_carro', 'modelos_de_carros', 'fotos_de_carros']
@@ -71,7 +72,7 @@ class CarrosUpdate(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
         context['titulo'] = "Editar Carros"
         return context
 
-class CarrosDelete(LoginRequiredMixin, SuccessMessageMixin, DeleteView):
+class CarrosDelete(LoginRequiredMixin, SuccessMessageMixin, DeleteView): # para deletar os itens
     queryset = Carros.objects.all()
     success_url = reverse_lazy('lista')
     success_message = 'Carro foi deletado com sucesso'
@@ -81,8 +82,14 @@ class CarrosDelete(LoginRequiredMixin, SuccessMessageMixin, DeleteView):
         self.object = get_object_or_404(Carros, pk=self.kwargs['pk'], usuario=self.request.user)
         return self.object
 
+class ChangePasswordView(LoginRequiredMixin, SuccessMessageMixin, PasswordChangeView): #caso queria alterar a sua senha
+    template_name = 'registration/change_password.html'
+    success_message = "Senha alterada com sucesso"
+    success_url = reverse_lazy('lista')
+    login_url = reverse_lazy('login') # se alguem tentar entrar em alguma pagina sem estar autenticado será redirecionado para o login
+
 @login_required(login_url ='login')
-def perfil(request):
+def perfil(request): # onde é possivel alterar o usuario e adicionar/editar o email
     if request.method == "GET":
         return render(request, 'carros/perfil.html')
     

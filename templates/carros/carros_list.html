@@ -8,60 +8,55 @@
 
 {% include 'mensagens.html' %}
 
-<div class="row">
-    <div class="col-2">
-        <br>
-        <a href="{% url 'perfil' %}" class="btn btn-primary">Perfil</a>
-    </div>
-    <div class="col-8">
-        <center><br><u><h3>Bem Vindo {{ user.username }}</h3></u>
-    <form method="GET" action=".">
-          <br><b>Buscar: </b><input type="search" name="nome_do_carro" value="{{ request.GET.nome_do_carro }}" class="p-1 border" 
-            autocomplete="off" placeholder="Digite o nome do carro">
+<nav class="navbar navbar-dark mynav">
+    <ul class="nav justify-content-start">
+        <a href="{% url 'perfil' %}" class="btn btn-primary btn-sm" title="Perfil">Perfil</a>
+    </ul>
 
-            <button type="submit" class="btn btn-success btn-sm mybtn">Buscar</button>
+    <ul class="nav justify-content-center">
+        <a href="{% url 'password_change' %}" class="btn btn-info btn-sm mybtn" title="Alterar Senha">Alterar Senha</a>
+    </ul>
 
-            <a href="{% url 'lista' %}" class="btn btn-info btn-sm mybtn">Limpar</a></center><br><br></form>
-    </div>
-    <div class="col-2">
-        <br>
-        <a href="{% url 'logout' %}" class="btn btn-danger mybutton" title="Sair" 
-        onclick="return confirm('Tem certeza que deseja sair?')">Sair</a><br>
-    </div>
-</div>
+    <ul class="nav justify-content-end">
+        <a href="{% url 'logout' %}" class="btn btn-danger btn-sm" onclick="return confirm('Tem certeza que deseja sair?')">Sair</a>
+    </ul>
+</nav>
 
-<div class="row">
-    <div class="col-">
-        
-    </div>
-        <table class="table table-bordered table-dark">
-            <thead class="mythead">
-                <tr>
-                    <th>Nome do Carro</th>
-                    <th>Detalhes do Carro</th>
-                    <th>Editar Carro</th>
-                    <th>Deletar Carro</th>
-                </tr>
-            </thead>
-            <tbody class="mytbody">
-                <tr>
-            {% for carro in object_list %}
-                <td>{{ carro.nome_do_carro }}</td>
-                <td><a href="{% url 'detalhar' carro.pk %}" title="Detalhes" class="btn btn-info btn-sm">
-                    <i class="fa fa-eye icon-eye" aria-hidden="true"></i></td></a>
-                <td><a href="{% url 'editar' carro.pk %}" title="Editar" class="btn btn-warning btn-sm">
-                    <i class="fa fa-pencil" aria-hidden="true"></i></a></td>
-                <td><a href="{% url 'deletar' carro.pk %}" title="Deletar" class="btn btn-danger btn-sm">
-                    <i class="fa fa-trash-o icon-trash" aria-hidden="true"></i></a></td>
-                </tr>
-            {% endfor %}
-            </tbody>
-        </table>
-    <div class="col-"> 
-    </div>
+<center><br><u><h2>Bem Vindo {{ user.username }}</h2></u>
+<form method="GET" action=".">
+    <br><input type="search" name="nome_do_carro" value="{{ request.GET.nome_do_carro }}" class="p-1 border mysearch" 
+    autocomplete="off" placeholder="Digite o nome do carro">
 
-</div>
-<br><center><a href="{% url 'novo' %}" class="btn btn-primary">Adicionar Carro</a></center><br>
+    <button type="submit" class="btn btn-success btn-sm mybtn">Buscar</button>
+
+    <a href="{% url 'lista' %}" class="btn btn-info btn-sm mybtn">Limpar</a></center><br>
+</form>
+
+<table class="table table-bordered table-dark">
+    <thead class="mythead">
+        <tr>
+            <th>Nome do Carro</th>
+            <th>Detalhes do Carro</th>
+            <th>Editar Carro</th>
+            <th>Deletar Carro</th>
+        </tr>
+    </thead>
+    <tbody class="mytbody">
+        <tr>
+    {% for carro in object_list %}
+        <td>{{ carro.nome_do_carro }}</td>
+        <td><a href="{% url 'detalhar' carro.pk %}" title="Detalhes" class="btn btn-info btn-sm">
+            <i class="fa fa-eye icon-eye" aria-hidden="true"></i></td></a>
+        <td><a href="{% url 'editar' carro.pk %}" title="Editar" class="btn btn-warning btn-sm">
+            <i class="fa fa-pencil" aria-hidden="true"></i></a></td>
+        <td><a href="{% url 'deletar' carro.pk %}" title="Deletar" class="btn btn-danger btn-sm">
+            <i class="fa fa-trash-o icon-trash" aria-hidden="true"></i></a></td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+ 
+<center><a href="{% url 'novo' %}" class="btn btn-primary">Adicionar Carro</a></center><br>
 
 <ul class="pagination justify-content-center">
     {% if page_obj.has_previous %}
@@ -98,7 +93,7 @@
 
     {% endif %}
 </ul>
-<center><a href="{% url 'password_change' %}" class="btn btn-info mybtn">Alterar Senha</a></center>
+
 {% endblock %}
 
 {% block footer %}
