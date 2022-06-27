@@ -1,6 +1,5 @@
 from django.db import models
 from django.contrib.auth.models import User
-from PIL import Image
 
 carros_choice = (
     ('Citroen', 'Citroen'),
@@ -28,19 +27,21 @@ valor_carros = (
     ('Não sabe informar', 'Não sabe informar'),
 )
 
-modelos_carros = (
-    ('Hatch', 'Hatch'),
-    ('Sedan', 'Sedan'),
-    ('SUV', 'SUV'),
-    ('Outros', 'Outros'),
+motor_carros = (
+    ('1.0', '1.0'),
+    ('1.4', '1.4'),
+    ('1.6', '1.6'),
+    ('1.8', '1.8'),
+    ('2.0', '2.0'),
+    ('4.0', '4.0'),
 )
 
 class Carros(models.Model):
     nome_do_carro = models.CharField(max_length=30)
     marcas_de_carros = models.CharField(max_length=30, choices=carros_choice)
     valor_do_carro = models.CharField(max_length=50, choices=valor_carros)
-    modelos_de_carros = models.CharField(max_length=30, choices=modelos_carros)
-    fotos_de_carros = models.ImageField(upload_to='clients_photos', null=True, blank=True, verbose_name='fotos')
+    modelos_de_carros = models.CharField(max_length=30, choices=motor_carros, verbose_name='Motor')
+    fotos_de_carros = models.ImageField(upload_to='clients_photos', null=True, blank=True, verbose_name='Foto:')
     usuario = models.ForeignKey(User, on_delete=models.CASCADE)
     
     class Meta:

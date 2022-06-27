@@ -13,7 +13,8 @@ def register_request(request):
             messages.success(request, f"Usuario cadastrado com sucesso por {username}")
             return redirect("login")
         else:
-            messages.error(request, "Você não obedeceu algum dos criterios abaixo, tente novamente")
+            messages.error(request, "Dados preenchidos incorretamente, tente novamente")
+            return redirect("cadastro")
     else:
         form = UsuariosForm
         return render(request, template_name="register.html", context={"register_form":form})

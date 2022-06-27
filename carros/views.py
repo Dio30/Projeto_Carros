@@ -1,4 +1,4 @@
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import get_object_or_404, render, redirect
 from .models import Carros
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -113,4 +113,4 @@ def perfil(request): # onde é possivel alterar o usuario e adicionar/editar o e
         request.user.save()
         messages.success(request, "Dados alterados com sucesso")
        
-    return render(request, template_name='carros/perfil.html')
+    return redirect('lista')
