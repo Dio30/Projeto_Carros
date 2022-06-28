@@ -36,7 +36,7 @@ motor_carros = (
     ('4.0', '4.0'),
 )
 
-class Carros(models.Model):
+class Carros(models.Model): # meu modelo principal para o CRUD de carros
     nome_do_carro = models.CharField(max_length=30)
     marcas_de_carros = models.CharField(max_length=30, choices=carros_choice)
     valor_do_carro = models.CharField(max_length=50, choices=valor_carros)
