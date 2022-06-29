@@ -10,21 +10,21 @@
 
 <center><font color="white"><h3>Detalhes do carro {{ object.nome_do_carro }}</h3></center><br>
 
-<b><li>Nome: {{ object.nome_do_carro }}</li><br>
-<li>Marca: {{ object.marcas_de_carros }}</li><br>
-<li>Valor: {{ object.valor_do_carro }}</li><br>
-<li>Motor: {{ object.modelos_de_carros }}</li><br>
+<b><li>Nome: <font color="yellow">{{ object.nome_do_carro }}</li></font><br>
+<li>Marca: <font color="yellow">{{ object.marcas_de_carros }}</li></font><br>
+<li>Valor: <font color="yellow">{{ object.valor_do_carro }}</li></font><br>
+<li>Motor: <font color="yellow">{{ object.modelos_de_carros }}</li></font><br>
 <li>Foto: <img src="{{ object.image_url|default_if_none:'#' }}" style="max-width:150px" alt="" 
 title="Foto de {{ user.username }}" crossorigin="anonymous"></li></b></font>
 <br>
-<center><a href="{% url 'lista' %}" class="btn btn-primary btm-sm">Para voltar para a lista</a></center>
+<center><a href="{% url 'lista' %}" class="btn btn-primary">Voltar</a></center></font>
 
 {% endblock %}
 
 {% block footer %}
 <footer class="footer">
     <div class="container">
-        <br><br><br><br><br><br>
+        <br><br><br><br>
         <center><span class="text">Desenvolvido por Dione Rafael Padilha</span></center>
     </div>
 </footer>

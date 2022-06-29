@@ -10,13 +10,13 @@
 
 {% include 'mensagens.html' %}
 
-<div class="form-content my-3 p-3">
+<div class="form-content my-1 p-3">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-5">
                 <div class="card shadow-lg border-0 rounded-lg mt-0 mb-3">
                     <div class="card-header justify-content-center mycardheader">
-                        <h3 class="font-weight-dark my-4 text-center">Perfil de {{ user.username }}</h3>
+                        <h3 class="font-weight-dark my-2 text-center">Perfil de {{ user.username }}</h3>
                     </div>
                     <div class="card-body mybody">
 
@@ -39,7 +39,7 @@
     </div>
 </div>
 
-    <br><b><font color="white"><li>O preenchimento do email não é obrigatório.</li><br>
+    <b><font color="white"><li>O preenchimento do email não é obrigatório.</li><br>
 
     <li>Se quiser somente trocar a sua senha clique em <a href="{% url 'password_change' %}">alterar senha</a>,
     se esqueceu da senha será <u>obrigatório cadastrar algum email válido aqui</u> e depois 
@@ -50,7 +50,7 @@
 {% block footer %}
 <footer class="footer">
     <div class="container">
-        <br><br><br>
+        <br><br>
         <center><span class="text">Desenvolvido por Dione Rafael Padilha</span></center>
     </div>
 </footer>

@@ -6,6 +6,7 @@ body{
     background-attachment: fixed;
     background-origin: padding-box;
     background-position: 50% 30%;
+    max-width: 100%;
 }
 
 .mythead{
@@ -39,7 +40,7 @@ body{
 }
 
 .mynav{
-    background-color: #a7a7a7;
+    background-color: #a0a0a0;
 }
 
 .mysearch{
@@ -48,14 +49,18 @@ body{
 }
 
 .mycardheader{
-    background-color: #969696;
+    background-color: #aeaeae;
 }
 
 .mybody{
-    background-color: #8a8a8a;
+    background-color: #8d8a8a;
     font-weight: bold;
 }
 
 .footer{
     color: #ffffff;
+}
+
+.my_a{
+    color: #0e56dd;
 }

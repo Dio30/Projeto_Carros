@@ -8,19 +8,23 @@
 
 {% include 'mensagens.html' %}
 
-<h3><font color="white">Tem certeza que deseja deletar o carro {{ object.nome_do_carro }} ?</h3></font><br>
+<h3><center><font color="white">Tem certeza que deseja deletar o carro {{ object.nome_do_carro }} ?</h3></center></font><br>
     <form method="post" action=".">
         {% csrf_token %}
-        <button type="submit" title="Deletar"class="btn btn-danger" onclick="return confirm('Tem certeza que deseja deletar?')">Delete</button>
-        <a href="{% url 'lista' %}" class="btn btn-primary" title="Lista">Para voltar a lista</a>
-
+        <center><button type="submit" title="Deletar"class="btn btn-danger" 
+            onclick="return confirm('Tem certeza que deseja deletar?')">Deletar</button>
+        <a href="{% url 'lista' %}" class="btn btn-primary" title="Lista">Voltar</a></center>
     </form>
+
+    <br><br><br><br>
+    <center><img src="{{ object.image_url|default_if_none:'#' }}" style="max-width:310px" alt="" 
+    title="Foto de {{ user.username }}" crossorigin="anonymous"></center>
 {% endblock %}
 
 {% block footer %}
 <footer class="footer">
     <div class="container">
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br>
         <center><span class="text">Desenvolvido por Dione Rafael Padilha</span></center>
     </div>
 </footer>

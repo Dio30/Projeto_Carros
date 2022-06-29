@@ -9,12 +9,13 @@
 {% block main %}
 
 {% include 'mensagens.html' %}
-<center><font color="white"><h2>{{ titulo }}</h2></center><br>
+
+<center><font color="#bcb9b9"><h2>{{ titulo }}</h2></font></center><br>
     <form method="post" action="." enctype="multipart/form-data">
         {% csrf_token %}
-        <b>{{ form|bootstrap }}</b></font>
-        <button type="submit" class="btn btn-success btm-sm">Salvar</button><br><br>
-        <center><a href="{% url 'lista' %}" class="btn btn-primary btm-sm">Para voltar para a lista</a></center>
+        <b><font color="#e4e4e4">{{ form|bootstrap }}</b></font>
+        <button type="submit" class="btn btn-success">Salvar</button>
+        <a href="{% url 'lista' %}" class="btn btn-primary">Voltar</a>
     </form>
 {% endblock %}
 
