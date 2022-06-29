@@ -8,7 +8,7 @@
 
 {% include 'mensagens.html' %}
 
-<nav class="navbar navbar-dark mynav">
+<br><nav class="navbar navbar-dark mynav">
     <ul class="nav justify-content-start">
         <a href="{% url 'perfil' %}" class="btn btn-primary btn-sm" title="Perfil">Perfil</a>
     </ul>
@@ -22,7 +22,7 @@
     </ul>
 </nav>
 
-<center><br><u><h2>Bem Vindo {{ user.username }}</h2></u>
+<center><br><u><font color="white"><h2>Bem Vindo {{ user.username }}</h2></font></u>
 <form method="GET" action=".">
     <br><input type="search" name="nome_do_carro" value="{{ request.GET.nome_do_carro }}" class="p-1 border mysearch" 
     autocomplete="off" placeholder="Digite o nome do carro">

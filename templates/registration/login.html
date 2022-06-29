@@ -8,22 +8,38 @@
 
 {% include 'mensagens.html' %}
 
-<h1>Login</h1><br>
-    <form method="POST" action="{% url 'login' %}">
-        {% csrf_token %}
-        {{ login_form|bootstrap }}
-        <a href="{% url 'password_reset' %}">Esqueci minha senha</a><br><br>
-        <button type="submit" class="btn btn-primary">Login</button>
-        <br><br><br>
-    </form>       
-        <br><br><p class="text-center">Não tem uma conta? <a href="{% url 'cadastro' %}" class="btn btn-primary btm-sm">Crie uma conta aqui</a></p>  
-        
+<div class="form-content my-0 p-2">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="card shadow-lg border-0 rounded-lg mt-0 mb-3">
+                    <div class="card-header justify-content-center mycardheader">
+                        <h2 class="font-weight-dark my-8 text-center">Login</h2>
+                    </div>
+                    <div class="card-body mybody">
+                        <form method="POST" action="{% url 'login' %}">
+                            {% csrf_token %}
+                            {{ login_form|bootstrap }}
+                            <a href="{% url 'password_reset' %}">Esqueci minha senha</a><br><br>
+                            <center><button type="submit" class="col-md-4 btn btn-primary">Entrar</button></center><hr>
+                            <br>
+                            <p class="text-center">Não tem uma conta? <a href="{% url 'cadastro' %}" 
+                            class="btn btn-primary btm-sm">Crie uma conta aqui</a></p> 
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+     
 {% endblock %}
 
 {% block footer %}
 <footer class="footer">
     <div class="container">
-        <br><br>
+        <br>
         <center><span class="text">Desenvolvido por Dione Rafael Padilha</span></center>
     </div>
 </footer>

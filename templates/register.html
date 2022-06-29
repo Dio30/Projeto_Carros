@@ -8,12 +8,34 @@
 
 {% include 'mensagens.html' %}
 
-<h1>Cadastro</h1><br>
-    <form method="POST" action="{% url 'cadastro' %}">
-        {% csrf_token %}
-        {{ register_form|bootstrap }}<br>
-        <button type="submit" class="btn btn-primary">Cadastrar</button><br>
-        <br><center><a href="{% url 'login' %}" class="btn btn-primary">Se já estiver cadastrado clique aqui</a></center><br><br>
-    </form>
+<div class="form-content my-0 p-2">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="card shadow-lg border-0 rounded-lg mt-0 mb-3">
+                    <div class="card-header justify-content-center mycardheader">
+                        <h2 class="font-weight-dark my-8 text-center">Novo Usuário</h2>
+                    </div>
+                    <div class="card-body mybody">
+                        <form method="POST" action="{% url 'cadastro' %}">
+                            {% csrf_token %}
+                            {{ register_form|bootstrap }}<br>
+                            <center><button type="submit" class="col-md-6 btn btn-primary">Cadastrar</button><br><br>
+                            <a href="{% url 'login' %}" class="col-md-6 btn btn-info mybtn">Voltar</a></center>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
         
+{% endblock %}
+
+{% block footer %}
+<footer class="footer">
+    <div class="container">
+        <center><span class="text">Desenvolvido por Dione Rafael Padilha</span></center>
+    </div>
+</footer>
 {% endblock %}

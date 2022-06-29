@@ -8,7 +8,7 @@
 
 {% include 'mensagens.html' %}
 
-<h3>Tem certeza que deseja deletar o carro {{ object.nome_do_carro }}?</h3><br>
+<h3><font color="white">Tem certeza que deseja deletar o carro {{ object.nome_do_carro }} ?</h3></font><br>
     <form method="post" action=".">
         {% csrf_token %}
         <button type="submit" title="Deletar"class="btn btn-danger" onclick="return confirm('Tem certeza que deseja deletar?')">Delete</button>
