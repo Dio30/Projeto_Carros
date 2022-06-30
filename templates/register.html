@@ -8,18 +8,19 @@
 
 {% include 'mensagens.html' %}
 
-<div class="form-content my-0 p-2">
+<div class="form-content my-0 p-3">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-8">
-                <div class="card shadow-lg border-0 rounded-lg mt-0 mb-3">
+                <div class="card shadow-lg border-1 rounded-lg mt-lg-2 mb-lg-2">
                     <div class="card-header justify-content-center mycardheader">
-                        <h2 class="font-weight-dark my-8 text-center">Novo Usuário</h2>
+                        <h2 class="font-weight-dark my-10 text-center">Novo Usuário</h2>
                     </div>
                     <div class="card-body mybody">
                         <form method="POST" action="{% url 'cadastro' %}">
                             {% csrf_token %}
-                            {{ register_form|bootstrap }}<br>
+                            {{ register_form|bootstrap }}
+                            <br>
                             <center><button type="submit" class="col-md-6 btn btn-primary">Cadastrar</button><br><br>
                             <a href="{% url 'login' %}" class="col-md-6 btn btn-info mybtn">Voltar</a></center>
                         </form>
