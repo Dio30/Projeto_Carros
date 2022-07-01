@@ -51,11 +51,11 @@ body{
 }
 
 .mycardheader{
-    background-color: #aeaeae;
+    background-color: #c1c1c1;
 }
 
 .mybody{
-    background-color: #888888;
+    background-color: #9c9c9c;
     font-weight: bold;
 }
 
@@ -72,14 +72,15 @@ body{
 }
 
 .text-muted {
-    color: #b80c0c!important;
+    color: #000000!important;
     font-size: 85%;
+    text-align:start;
 }
 
 .mydetail{
     color: #dcd214;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
-    font-size: 95%;
+    font-size: 105%;
 }
 
 .myindice{

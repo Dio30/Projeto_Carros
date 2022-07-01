@@ -13,9 +13,9 @@
 <h3><center><font color="white">Tem certeza que deseja deletar o carro {{ object.nome_do_carro }} ?</h3></center></font><br>
     <form method="post" action=".">
         {% csrf_token %}
-        <center><button type="submit" title="Deletar"class="btn btn-danger" 
+        <center><button type="submit" title="Deletar"class="btn btn-danger mx-4" 
             onclick="return confirm('Tem certeza que deseja deletar?')">Deletar</button>
-        <a href="{% url 'lista' %}" class="btn btn-primary" title="Lista">Voltar</a></center>
+        <a href="{% url 'lista' %}" class="btn btn-primary mx-4" title="Lista">Voltar</a></center>
     </form>
 
     <br><br><br><br>

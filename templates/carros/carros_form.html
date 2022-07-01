@@ -2,9 +2,9 @@
 
 {% load static %}
 
-{% load humanize %}
-
 {% load bootstrap %}
+
+{% load humanize %}
 
 {% block title %} {{ titulo }} {% endblock %}
 
@@ -12,12 +12,12 @@
 
 {% include 'mensagens.html' %}
 
-<center><font color="#bcb9b9"><h2>{{ titulo }}</h2></font></center><br>
+<center><h2 class="mytext_perfil"><u>{{ titulo }}</u></h2></center><br>
     <form method="post" action="." enctype="multipart/form-data">
         {% csrf_token %}
-        <b><font color="#e4e4e4">{{ form|bootstrap }}</b></font>
-        <button type="submit" class="btn btn-success">Salvar</button>
-        <a href="{% url 'lista' %}" class="btn btn-primary">Voltar</a>
+        <b class="mytext_perfil">{{ form|bootstrap }}</b><br>
+        <center><button type="submit" class="btn btn-success mx-4">Salvar</button>
+        <a href="{% url 'lista' %}" class="btn btn-primary mx-4">Voltar</a></center>
     </form>
 {% endblock %}
 
