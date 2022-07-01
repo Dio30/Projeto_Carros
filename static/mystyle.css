@@ -1,12 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,300&display=swap');
 
+@media (min-width: 300px){
+    body{max-width: 100%;};
+}
+
 body{
     background-color: #c5c5c5;
     background-image: url("/static/imagens/background.jpg");
     background-attachment: fixed;
     background-origin: padding-box;
-    background-position: 50% 30%;
-    max-width: 100%;
 }
 
 .mythead{
@@ -53,7 +55,7 @@ body{
 }
 
 .mybody{
-    background-color: #8d8a8a;
+    background-color: #888888;
     font-weight: bold;
 }
 
@@ -62,5 +64,44 @@ body{
 }
 
 .my_a{
-    color: #0e56dd;
+    color: #110eba;
+}
+
+.my_a2{
+    color: #393793;
+}
+
+.text-muted {
+    color: #b80c0c!important;
+    font-size: 85%;
+}
+
+.mydetail{
+    color: #dcd214;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
+    font-size: 95%;
+}
+
+.myindice{
+    color: #000000;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 100%;
+}
+
+.myvalor_do_carro{
+    color: #dcd214;
+    font-family:'Times New Roman', Times, serif ;
+    font-size: 102%;
+}
+
+.my_h2{
+    color: #10c5a6;
+}
+
+.my_u{
+    color: #17ef10;
+}
+
+.mytext_perfil{
+    color: #ffffff;
 }

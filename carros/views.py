@@ -14,9 +14,9 @@ class CarrosList(LoginRequiredMixin, ListView): # para listar os itens
     model = Carros
     queryset = Carros.objects.order_by('nome_do_carro').all()
     login_url = reverse_lazy('login')
-    paginate_by = 3
+    paginate_by = 4
     
-    def get_queryset(self):
+    def get_queryset(self): # para cada usuario ser unico e não ter acesso a qualquer coisa de outros usuarios cadastrados
         self.object_list = Carros.objects.filter(usuario=self.request.user)
         return self.object_list
     
@@ -26,6 +26,7 @@ class CarrosList(LoginRequiredMixin, ListView): # para listar os itens
             self.object_list = self.get_queryset().filter(nome_do_carro__icontains=pesquisar)
         else:
             self.object_list = self.get_queryset()
+            
         context = self.get_context_data(object_list=self.object_list)
         return self.render_to_response(context)
     
@@ -39,8 +40,7 @@ class CarrosDetail(LoginRequiredMixin, DetailView): # para mostrar os itens em d
     
 class CarrosNew(LoginRequiredMixin, SuccessMessageMixin, CreateView): # para criar itens novos
     model = Carros
-    fields = ['nome_do_carro', 'marcas_de_carros', 
-    'valor_do_carro', 'modelos_de_carros', 'fotos_de_carros']
+    fields = ['nome_do_carro', 'marcas_de_carros', 'valor_do_carro', 'modelos_de_carros', 'fotos_de_carros']
     success_url = reverse_lazy('lista')
     success_message = 'Carro adicionado com sucesso'
     login_url = reverse_lazy('login')
@@ -57,8 +57,7 @@ class CarrosNew(LoginRequiredMixin, SuccessMessageMixin, CreateView): # para cri
     
 class CarrosUpdate(LoginRequiredMixin, SuccessMessageMixin, UpdateView): # para editar os itens
     model = Carros
-    fields = ['nome_do_carro', 'marcas_de_carros', 
-    'valor_do_carro', 'modelos_de_carros', 'fotos_de_carros']
+    fields = ['nome_do_carro', 'marcas_de_carros', 'valor_do_carro', 'modelos_de_carros', 'fotos_de_carros']
     success_url = reverse_lazy('lista')
     success_message = 'Carro atualizado com sucesso'
     login_url = reverse_lazy('login')
@@ -102,9 +101,9 @@ def perfil(request): # onde é possivel alterar o usuario e adicionar/editar o e
             messages.error(request, "Já existe um usuario com esse nome")
             return render(request, template_name='carros/perfil.html')
         
-        usuario = User.objects.filter(email=email).exclude(id=request.user.id)
+        meu_email = User.objects.filter(email=email).exclude(id=request.user.id)
         
-        if usuario.exists():
+        if meu_email.exists():
             messages.error(request, "Já existe um usuario com esse email")
             return render(request, template_name='carros/perfil.html')
         

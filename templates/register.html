@@ -1,6 +1,12 @@
 {% extends 'base.html' %}
 
-{% load bootstrap %}
+{% load static %}
+
+{% load crispy_forms_tags %}
+
+{% crispy form form.helper %}
+
+{% load humanize %}
 
 {% block title %} Cadastrar Novo Usuario {% endblock %}
 
@@ -19,10 +25,9 @@
                     <div class="card-body mybody">
                         <form method="POST" action="{% url 'cadastro' %}">
                             {% csrf_token %}
-                            {{ register_form|bootstrap }}
-                            <br>
-                            <center><button type="submit" class="col-md-6 btn btn-primary">Cadastrar</button><br><br>
-                            <a href="{% url 'login' %}" class="col-md-6 btn btn-info mybtn">Voltar</a></center>
+                            {{ form|crispy }}
+                            <center><button type="submit" class="col-md-6 btn btn-primary">Cadastrar</button>
+                            <a href="{% url 'login' %}" class="col-md-6 btn btn-info mybtn mt-2">Voltar</a></center>
                         </form>
                     </div>
                 </div>

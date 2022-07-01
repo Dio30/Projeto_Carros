@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% load bootstrap %}
+{% load static %}
 
 {% load humanize %}
 
@@ -29,8 +29,8 @@
                             <p>Email:</p>
                             <input type="email" class="form-control" value="{{ user.email }}" name="email" autocomplete="off"></b>
                             <br>
-                            <center><input type="submit" class="btn btn-success btm-sm" value="Salvar alterações">
-                            <a href="{% url 'lista' %}" class="btn btn-primary btm-sm">Voltar</a></center>
+                            <center><input type="submit" class="btn btn-success btm-sm" value="Salvar">
+                            <a href="{% url 'lista' %}" class="btn btn-primary btm-sm mx-2">Voltar</a></center>
                         </form>
                     </div>
                 </div>
@@ -39,11 +39,11 @@
     </div>
 </div>
 
-    <b><font color="white"><li>O preenchimento do email não é obrigatório.</li><br>
-
-    <li>Se quiser somente trocar a sua senha clique em <a href="{% url 'password_change' %}">alterar senha</a>,
+    <b class="mytext_perfil"><li>O preenchimento do email não é obrigatório.</li>
+    <br>
+    <li>Se quiser somente trocar a sua senha clique em <a href="{% url 'password_change' %}" class="my_a2">alterar senha</a>,
     se esqueceu da senha será <u>obrigatório cadastrar algum email válido aqui</u> e depois 
-    <a href="{% url 'password_reset' %}">clique aqui</a> para enviar o email.</li></b></font>
+    <a href="{% url 'password_reset' %}" class="my_a">clique aqui</a> para enviar o email.</li></b>
 
 {% endblock %}
 
