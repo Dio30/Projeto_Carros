@@ -37,10 +37,10 @@ motor_carros = (
 )
 
 class Carros(models.Model): # modelo para o CRUD de carros
-    nome_do_carro = models.CharField(max_length=30, verbose_name='Modelo do Carro')
-    marcas_de_carros = models.CharField(max_length=30, choices=carros_choice, verbose_name='Fabricante')
-    valor_do_carro = models.CharField(max_length=50, choices=valor_carros)
-    modelos_de_carros = models.CharField(max_length=30, choices=motor_carros, verbose_name='Motor')
+    nome_do_carro = models.CharField(max_length=30, verbose_name='Modelo do Carro:')
+    marcas_de_carros = models.CharField(max_length=30, choices=carros_choice, verbose_name='Fabricante:')
+    valor_do_carro = models.CharField(max_length=50, choices=valor_carros, verbose_name='Valor do Carro:')
+    modelos_de_carros = models.CharField(max_length=30, choices=motor_carros, verbose_name='Motor:')
     fotos_de_carros = models.ImageField(upload_to='clients_photos', null=True, blank=True, verbose_name='Foto:')
     usuario = models.ForeignKey(User, on_delete=models.CASCADE)
     
