@@ -40,7 +40,7 @@ class CarrosDetail(LoginRequiredMixin, DetailView): # para mostrar os itens em d
     
 class CarrosNew(LoginRequiredMixin, SuccessMessageMixin, CreateView): # para criar itens novos
     model = Carros
-    fields = ['nome_do_carro', 'marcas_de_carros', 'valor_do_carro', 'modelos_de_carros', 'fotos_de_carros']
+    fields = ['nome_do_carro', 'marcas_de_carros', 'valor_do_carro', 'modelos_de_carros', 'motorizacao','fotos_de_carros']
     success_url = reverse_lazy('lista')
     success_message = 'Carro adicionado com sucesso'
     login_url = reverse_lazy('login')
@@ -57,7 +57,7 @@ class CarrosNew(LoginRequiredMixin, SuccessMessageMixin, CreateView): # para cri
     
 class CarrosUpdate(LoginRequiredMixin, SuccessMessageMixin, UpdateView): # para editar os itens
     model = Carros
-    fields = ['nome_do_carro', 'marcas_de_carros', 'valor_do_carro', 'modelos_de_carros', 'fotos_de_carros']
+    fields = ['nome_do_carro', 'marcas_de_carros', 'valor_do_carro', 'modelos_de_carros', 'motorizacao','fotos_de_carros']
     success_url = reverse_lazy('lista')
     success_message = 'Carro atualizado com sucesso'
     login_url = reverse_lazy('login')

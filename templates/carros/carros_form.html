@@ -13,7 +13,7 @@
 {% include 'mensagens.html' %}
 
 <center><h2 class="mytext_perfil"><u>{{ titulo }}</u></h2></center><br>
-    <form method="post" action="." enctype="multipart/form-data">
+    <form method="post" action="." enctype="multipart/form-data" autocomplete="off">
         {% csrf_token %}
         <b class="mytext_perfil">{{ form|bootstrap }}</b><br>
         <center><button type="submit" class="btn btn-success mx-4">Salvar</button>

@@ -23,6 +23,7 @@
                         <li>Marca:<b class="mydetail"> {{ object.marcas_de_carros }}</li></b><br>
                         <li>Valor:<b class="myvalor_do_carro"> {{ object.valor_do_carro }}</li></b><br>
                         <li>Motor:<b class="mydetail"> {{ object.modelos_de_carros }}</li></b><br>
+                        <li>Turbo:<b class="mydetail"> {{ object.motorizacao }}</li></b><br>
                         <li>Foto: <img src="{{ object.image_url|default_if_none:'#' }}" style="max-width:190px" alt="" 
                         title="Foto de {{ user.username }}" crossorigin="anonymous"></li></b><br>
                         <center><a href="{% url 'lista' %}" class="btn btn-primary">Voltar</a></center>

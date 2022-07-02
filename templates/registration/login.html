@@ -21,7 +21,7 @@
                         <h2 class="font-weight-dark my-8 text-center">Login</h2>
                     </div>
                     <div class="card-body mybody">
-                        <form method="POST" action="{% url 'login' %}">
+                        <form method="POST" action="{% url 'login' %}" autocomplete="off">
                             {% csrf_token %}
                             {{ form|crispy }}
                             <a href="{% url 'password_reset' %}" class="my_a">Esqueci minha senha</a><br><br>

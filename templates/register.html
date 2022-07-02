@@ -23,7 +23,7 @@
                         <h2 class="font-weight-dark my-10 text-center">Novo Usuário</h2>
                     </div>
                     <div class="card-body mybody">
-                        <form method="POST" action="{% url 'cadastro' %}">
+                        <form method="POST" action="{% url 'cadastro' %}" autocomplete="off">
                             {% csrf_token %}
                             {{ form|crispy }}
                             <center><button type="submit" class="col-md-6 btn btn-primary">Cadastrar</button>
