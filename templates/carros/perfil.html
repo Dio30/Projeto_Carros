@@ -24,10 +24,10 @@
                             {% csrf_token %}
                         
                             <b><p>Usuario:</p>
-                            <input type="text" class="form-control" value="{{ user.username }}" name="username" autocomplete="off">
+                            <input type="text" class="form-control" value="{{ user.username }}" name="username" autocomplete="off" required>
                             <br>
                             <p>Email:</p>
-                            <input type="email" class="form-control" value="{{ user.email }}" name="email" autocomplete="off"></b>
+                            <input type="email" class="form-control" value="{{ user.email }}" name="email" autocomplete="off" required></b>
                             <br>
                             <center><input type="submit" class="btn btn-success mx-3" value="Salvar">
                             <a href="{% url 'lista' %}" class="btn btn-primary mx-3">Voltar</a></center>
@@ -51,7 +51,9 @@
 <footer class="footer">
     <div class="container">
         <br><br>
-        <center><span class="text">Desenvolvido por Dione Rafael Padilha</span></center>
+        <center><span class="text">Desenvolvido por Dione Rafael Padilha, meu
+            <a href="https://www.linkedin.com/in/dione-padilha-a99864234/" target="_blank">Linkedin</a> e 
+            <a href="https://github.com/Dio30" target="_blank">GitHub</a></span></center></span></center>
     </div>
 </footer>
 {% endblock %}

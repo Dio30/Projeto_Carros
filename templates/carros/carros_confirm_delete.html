@@ -13,21 +13,24 @@
 <h3><center><font color="white">Tem certeza que deseja deletar o carro {{ object.nome_do_carro }} ?</h3></center></font><br>
     <form method="post" action=".">
         {% csrf_token %}
-        <center><button type="submit" title="Deletar"class="btn btn-danger mx-4" 
-            onclick="return confirm('Tem certeza que deseja deletar?')">Deletar</button>
-        <a href="{% url 'lista' %}" class="btn btn-primary mx-4" title="Lista">Voltar</a></center>
+
+        <center><img src="{{ object.image_url|default_if_none:'#' }}" style="max-width:310px" alt="" 
+        title="Foto de {{ user.username }}" crossorigin="anonymous"></center>
+        <br><br>
+        <center><button type="submit" title="Deletar"class="btn btn-danger mx-2" 
+            onclick="return confirm('Tem certeza que deseja deletar o carro {{ object.nome_do_carro }} ?')">Deletar</button>
+        <a href="{% url 'lista' %}" class="btn btn-primary mx-2" title="Lista">Voltar</a></center>
     </form>
 
-    <br><br><br><br>
-    <center><img src="{{ object.image_url|default_if_none:'#' }}" style="max-width:310px" alt="" 
-    title="Foto de {{ user.username }}" crossorigin="anonymous"></center>
 {% endblock %}
 
 {% block footer %}
 <footer class="footer">
     <div class="container">
         <br><br><br><br><br><br><br>
-        <center><span class="text">Desenvolvido por Dione Rafael Padilha</span></center>
+        <center><span class="text">Desenvolvido por Dione Rafael Padilha, meu
+            <a href="https://www.linkedin.com/in/dione-padilha-a99864234/" target="_blank">Linkedin</a> e 
+            <a href="https://github.com/Dio30" target="_blank">GitHub</a></span></center></span></center>
     </div>
 </footer>
 {% endblock %}

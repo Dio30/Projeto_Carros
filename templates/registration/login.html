@@ -4,15 +4,13 @@
 
 {% load crispy_forms_tags %}
 
-{% crispy form form.helper %}
-
 {% block title %} Login {% endblock %}
 
 {% block main %}
 
 {% include 'mensagens.html' %}
 
-<div class="form-content my-2 p-4">
+<div class="form-content my-2 p-3">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-8">
@@ -21,13 +19,33 @@
                         <h2 class="font-weight-dark my-8 text-center">Login</h2>
                     </div>
                     <div class="card-body mybody">
-                        <form method="POST" action="{% url 'login' %}" autocomplete="off">
+                        <form method="POST" action="." autocomplete="off">
                             {% csrf_token %}
-                            {{ form|crispy }}
-                            <a href="{% url 'password_reset' %}" class="my_a">Esqueci minha senha</a><br><br>
+                            {% if form.non_field_errors %}
+                                {% for error in form.non_field_errors %}
+                                    <p class="text-danger">{{ error }}</p>
+                                {% endfor %}
+                            {% endif %}
+                            <div class="form-label-group">
+                                <input type="text" id="inputUser" class="form-control"  
+                                placeholder="Usuário" autocomplete="off" name='username' required>
+                                <label for="inputUser">Usuário</label>
+                            </div>
+
+                            <div class="form-label-group">
+                                <input type="password" id="inputPassword" class="form-control" 
+                                    placeholder="Senha" autocomplete="off" name='password' required>
+                                <label for="inputPassword">Senha</label>
+                            </div>
+                            <a href="{% url 'password_reset' %}" class="my_a">Esqueci minha senha</a>
+                            <br><br>
                             <center><button type="submit" class="col-md-4 btn btn-primary">Entrar</button></center><hr>
                             <br>
-                            <p class="text-center">Não tem uma conta? <a href="{% url 'cadastro' %}" class="my_a">Crie uma conta aqui</a>.</p> 
+                            <p class="text-center">Não tem uma conta? <a href="{% url 'cadastro' %}" class="my_a">Crie uma conta aqui</a>.</p>
+                            <br>
+                            <center>Para ir no meu Linkedin <a href="https://www.linkedin.com/in/dione-padilha-a99864234/" 
+                            target="_blank" class="my_a">clique aqui</a> ou  
+                            no meu GitHub <a href="https://github.com/Dio30" target="_blank" class="my_a">clique aqui</a>.</center>
                         </form>
                     </div>
                 </div>
@@ -41,7 +59,7 @@
 {% block footer %}
 <footer class="footer">
     <div class="container">
-        <br>
+        <br><br>
         <center><span class="text">Desenvolvido por Dione Rafael Padilha</span></center>
     </div>
 </footer>
