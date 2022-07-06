@@ -23,12 +23,12 @@
                             {% csrf_token %}
                             {% if form.non_field_errors %}
                                 {% for error in form.non_field_errors %}
-                                    <p class="text-danger">{{ error }}</p>
+                                    <p class="mytext">{{ error }}</p>
                                 {% endfor %}
                             {% endif %}
                             <div class="form-label-group">
                                 <input type="text" id="inputUser" class="form-control"  
-                                placeholder="Usuário" autocomplete="off" name='username' required>
+                                placeholder="Usuário" autocomplete="off" spellcheck="false" name='username' required>
                                 <label for="inputUser">Usuário</label>
                             </div>
 
@@ -40,12 +40,12 @@
                             <a href="{% url 'password_reset' %}" class="my_a">Esqueci minha senha</a>
                             <br><br>
                             <center><button type="submit" class="col-md-4 btn btn-primary">Entrar</button></center><hr>
-                            <br>
+                            
                             <p class="text-center">Não tem uma conta? <a href="{% url 'cadastro' %}" class="my_a">Crie uma conta aqui</a>.</p>
                             <br>
-                            <center>Para ir no meu Linkedin <a href="https://www.linkedin.com/in/dione-padilha-a99864234/" 
-                            target="_blank" class="my_a">clique aqui</a> ou  
-                            no meu GitHub <a href="https://github.com/Dio30" target="_blank" class="my_a">clique aqui</a>.</center>
+                            <center>Meu <a href="https://www.linkedin.com/in/dione-padilha-a99864234/" 
+                            target="_blank" class="btn btn-success btn-sm">Linkedin</a> ou 
+                            <a href="https://github.com/Dio30" target="_blank" class="btn btn-success btn-sm">GitHub</a></center>
                         </form>
                     </div>
                 </div>

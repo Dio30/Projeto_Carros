@@ -34,7 +34,7 @@ body{
 }
 
 .icon-trash{
-    color: rgb(192, 191, 191);
+    color: rgb(255, 251, 251);
 }
 
 .mybtn{
@@ -51,12 +51,19 @@ body{
 }
 
 .mycardheader{
-    background-color: #c1c1c1;
+    background-color: #ababab;
 }
 
 .mybody{
     background-color: #9c9c9c;
     font-weight: bold;
+}
+
+.mybodydetail{
+  background-color: #818181;
+  font-weight: bold;
+  border-style: groove;
+  border-color: #000000;
 }
 
 .footer{
@@ -74,25 +81,39 @@ body{
 .text-muted {
     color: #000000!important;
     font-size: 85%;
-    text-align:start;
+    font-weight: bold;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.myindice{
+    color: #000000;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 100%;
 }
 
 .mydetail{
     color: #dcd214;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
-    font-size: 105%;
-}
-
-.myindice{
-    color: #000000;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 100%;
 }
 
-.myvalor_do_carro{
-    color: #dcd214;
-    font-family:'Times New Roman', Times, serif ;
-    font-size: 102%;
+.table-responsive{
+  overflow-x: hidden;
+  overflow-y: hidden
+}
+
+.table td{
+  padding-left: 0.50rem;
+  padding-right: 0.50rem;
+  padding-top: 0.50rem;
+  padding-bottom: 0.50rem;
+}
+
+.table th{
+  padding-left: 0.50rem;
+  padding-right: 0.50rem;
+  padding-top: 0.50rem;
+  padding-bottom: 0.50rem;
 }
 
 .my_h2{
@@ -106,6 +127,18 @@ body{
 .mytext_perfil{
     color: #ffffff;
     color-scheme: dark;
+}
+
+.mytext{ /* tive que fazer essa class separada pois não consegui integra-la ao invalid-feedback */
+  color:#c41f1f;
+  font-size: 85%;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.invalid-feedback{
+  color:#c41f1f;
+  font-size: 85%;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .form-signin {

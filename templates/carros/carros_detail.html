@@ -18,15 +18,18 @@
                     <div class="card-header justify-content-center mycardheader">
                         <h2 class="font-weight-dark my-8 text-center">Detalhes de {{ object.nome_do_carro }}</h2>
                     </div>
-                    <div class="card-body mybody">
-                        <b class="myindice"><li>Nome:<b class="mydetail"> {{ object.nome_do_carro }}</li></b><br>
-                        <li>Marca:<b class="mydetail"> {{ object.marcas_de_carros }}</li></b><br>
-                        <li>Valor:<b class="myvalor_do_carro"> {{ object.valor_do_carro }}</li></b><br>
-                        <li>Motor:<b class="mydetail"> {{ object.modelos_de_carros }}</li></b><br>
-                        <li>Turbo:<b class="mydetail"> {{ object.motorizacao }}</li></b><br>
-                        <li>Foto: <img src="{{ object.image_url|default_if_none:'#' }}" style="max-width:190px" alt="" 
-                        title="Foto de {{ user.username }}" crossorigin="anonymous"></li></b><br>
-                        <center><a href="{% url 'lista' %}" class="btn btn-primary">Voltar</a></center>
+                    <div class="card-body mybodydetail">
+                        <div class="table-responsive">
+                            <b class="myindice"><p>Fabricante:<b class="mydetail"> {{ object.marcas_de_carros }}</b></p><hr color="white">
+                            <p>Ano de Fabricação:<b class="mydetail"> {{ object.ano_de_fabricacao }}</b></p><hr color="white">
+                            <p>Ano do Modelo:<b class="mydetail"> {{ object.ano_do_modelo }}</b></p><hr color="white">
+                            <p>Valor:<b class="mydetail"> {{ object.valor_do_carro }}</b></p><hr color="white">
+                            <p>Motor:<b class="mydetail"> {{ object.modelos_de_carros }}</b></p><hr color="white">
+                            <p>Turbo:<b class="mydetail"> {{ object.motorizacao }}</b></p><hr color="white">
+                            <p>Foto: <img src="{{ object.image_url|default_if_none:'#' }}" style="max-width:190px" alt="" 
+                            title="Foto de {{ user.username }}" crossorigin="anonymous"></p></b>
+                            <center><a href="{% url 'lista' %}" class="btn btn-primary">Voltar</a></center>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -39,10 +42,9 @@
 {% block footer %}
 <footer class="footer">
     <div class="container">
-        <br><br>
-        <center><span class="text">Desenvolvido por Dione Rafael Padilha, meu
-            <a href="https://www.linkedin.com/in/dione-padilha-a99864234/" target="_blank">Linkedin</a> e 
-            <a href="https://github.com/Dio30" target="_blank">GitHub</a></span></center></span></center>
+        <center><span class="text">Desenvolvido por Dione Rafael Padilha, 
+            <a href="https://www.linkedin.com/in/dione-padilha-a99864234/" target="_blank" class="btn btn-success btn-sm">Linkedin</a> e 
+            <a href="https://github.com/Dio30" target="_blank" class="btn btn-success btn-sm">GitHub</a></span></center>
     </div>
 </footer>
 {% endblock %}

@@ -4,8 +4,6 @@
 
 {% load crispy_forms_tags %}
 
-{% crispy form form.helper %}
-
 {% load humanize %}
 
 {% block title %} Cadastrar Novo Usuario {% endblock %}
@@ -26,8 +24,8 @@
                         <form method="POST" action="{% url 'cadastro' %}" autocomplete="off">
                             {% csrf_token %}
                             {{ form|crispy }}
-                            <center><button type="submit" class="col-md-6 btn btn-primary">Cadastrar</button>
-                            <a href="{% url 'login' %}" class="col-md-6 btn btn-info mybtn mt-2">Voltar</a></center>
+                            <button type="submit" class="btn btn-primary mx-2">Cadastrar</button>
+                            <a href="{% url 'login' %}" class="btn btn-info mybtn mx-2">Voltar</a>
                         </form>
                     </div>
                 </div>

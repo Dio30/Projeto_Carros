@@ -45,16 +45,16 @@
     </thead>
     <tbody class="mytbody">
         <tr>
-    {% for carro in object_list %}
-        <td>{{ carro.nome_do_carro }}</td>
-        <td><a href="{% url 'detalhar' carro.pk %}" title="Detalhes" class="btn btn-success btn-sm">
-            <i class="fa fa-eye icon-eye" aria-hidden="true"></i></td></a>
-        <td><a href="{% url 'editar' carro.pk %}" title="Editar" class="btn btn-warning btn-sm">
-            <i class="fa fa-pencil" aria-hidden="true"></i></a></td>
-        <td><a href="{% url 'deletar' carro.pk %}" title="Deletar" class="btn btn-danger btn-sm">
-            <i class="fa fa-trash-o icon-trash" aria-hidden="true"></i></a></td>
+            {% for carro in object_list %}
+                <td>{{ carro.nome_do_carro }}</td>
+                <td><a href="{% url 'detalhar' carro.pk %}" title="Detalhes" class="btn btn-success btn-sm">
+                    <i class="fa fa-eye icon-eye" aria-hidden="true"></i></td></a>
+                <td><a href="{% url 'editar' carro.pk %}" title="Editar" class="btn btn-warning btn-sm">
+                    <i class="fa fa-pencil" aria-hidden="true"></i></a></td>
+                <td><a href="{% url 'deletar' carro.pk %}" title="Deletar" class="btn btn-danger btn-sm">
+                    <i class="fa fa-trash-o icon-trash" aria-hidden="true"></i></a></td>
         </tr>
-    {% endfor %}
+            {% endfor %}
     </tbody>
 </table>
 
@@ -103,9 +103,9 @@
 <footer class="footer">
     <div class="container">
         <br><br>
-        <center><span class="text">Desenvolvido por Dione Rafael Padilha, meu
-        <a href="https://www.linkedin.com/in/dione-padilha-a99864234/" target="_blank">Linkedin</a> e 
-        <a href="https://github.com/Dio30" target="_blank">GitHub</a></span></center>
+        <center><span class="text">Desenvolvido por Dione Rafael Padilha,
+        <a href="https://www.linkedin.com/in/dione-padilha-a99864234/" target="_blank" class="btn btn-success btn-sm">Linkedin</a> e 
+        <a href="https://github.com/Dio30" target="_blank" class="btn btn-success btn-sm">GitHub</a></span></center><br>
     </div>
 </footer>
 {% endblock %}
