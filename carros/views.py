@@ -20,7 +20,7 @@ class CarrosList(LoginRequiredMixin, ListView): # para listar os itens
         self.object_list = Carros.objects.filter(usuario=self.request.user)
         return self.object_list
     
-    def get(self, request, *args, **kwargs):
+    def get(self, request, *args, **kwargs): #para pesquisar pelo nome do carro
         pesquisar = self.request.GET.get('nome_do_carro')
         if pesquisar:
             self.object_list = self.get_queryset().filter(nome_do_carro__icontains=pesquisar)

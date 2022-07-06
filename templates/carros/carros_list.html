@@ -26,7 +26,7 @@
 
 <center><br><u class="my_u"><h2 class="my_h2">Bem vindo {{ user.username }}</h2></u>
 <form method="GET" action=".">
-    <br><input type="search" name="nome_do_carro" value="{{ request.GET.nome_do_carro }}" class="p-1 border mysearch" 
+    <br><input type="text" name="nome_do_carro" value="{{ request.GET.nome_do_carro }}" class="p-1 border mysearch" 
     autocomplete="off" placeholder="Digite o nome do carro">
 
     <button type="submit" class="btn btn-success btn-sm mybtn">Buscar</button>
@@ -65,32 +65,53 @@
 
         {% if request.GET.nome_do_carro %}
 
-        <li class="page-item"><a class="page-link" href="?page=1&nome={{ request.GET.nome_do_carro }}">Primeira</a></li>
-        <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}&nome={{ request.GET.nome_do_carro }}">&laquo;</a></li>
+        <li class="page-item">
+            <a class="page-link" href="?page=1&nome_do_carro={{ request.GET.nome_do_carro }}">Primeira</a>
+        </li>
+
+        <li class="page-item">
+            <a class="page-link" href="?page={{ page_obj.previous_page_number }}&nome_do_carro={{ request.GET.nome_do_carro }}">&laquo;</a>
+        </li>
         
         {% else %}
 
-        <li class="page-item"><a class="page-link" href="?page=1">Primeira</a></li>
-        <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}">&laquo;</a></li>
+        <li class="page-item">
+            <a class="page-link" href="?page=1">Primeira</a>
+        </li>
+
+        <li class="page-item">
+            <a class="page-link" href="?page={{ page_obj.previous_page_number }}">&laquo;</a>
+        </li>
         
         {% endif %}
-    
+
     {% endif %}
 
     <li class="page-item">
         <span class="page-link">{{ page_obj.number }} de {{ page_obj.paginator.num_pages }}</span>
     </li>
+
     {% if page_obj.has_next %}
 
         {% if request.GET.nome_do_carro %}
 
-        <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}&nome={{ request.GET.nome_do_carro }}">&raquo;</a></li>
-        <li class="page-item"><a class="page-link" href="?page={{ page_obj.paginator.num_pages }}&nome={{ request.GET.nome_do_carro }}">Última</a></li>
+        <li class="page-item">
+            <a class="page-link" href="?page={{ page_obj.next_page_number }}&nome_do_carro={{ request.GET.nome_do_carro }}">&raquo;</a>
+        </li>
+
+        <li class="page-item">
+            <a class="page-link" href="?page={{ page_obj.paginator.num_pages }}&nome_do_carro={{ request.GET.nome_do_carro }}">Última</a>
+        </li>
         
         {% else %}
 
-        <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">&raquo;</a></li>
-        <li class="page-item"><a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">Última</a></li>
+        <li class="page-item">
+            <a class="page-link" href="?page={{ page_obj.next_page_number }}">&raquo;</a>
+        </li>
+        
+        <li class="page-item">
+            <a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">Última</a>
+        </li>
         
         {% endif %}
 
