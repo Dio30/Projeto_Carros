@@ -257,6 +257,7 @@ body{
   border:solid 2px #5F9EA0;
   border-radius:10px;
   width: 261px;
+  max-width: 100%;
   height: 34px;
 }
 
@@ -273,7 +274,7 @@ body{
 
 #btnBusca{
   border:none;
-  float:left;
+  float:none;
   height: 30px;
   border-radius:0 2px 2px 0;
   width: 30px;
@@ -284,6 +285,7 @@ body{
 
 .mysearchclear{
   color: #000000;
+  float:right;
   border-radius:0 8px 8px 0;
   font-weight: bold;
   font-family:'Times New Roman', Times, serif;
