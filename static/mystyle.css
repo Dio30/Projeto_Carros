@@ -45,11 +45,6 @@ body{
     background-color: #a0a0a0;
 }
 
-.mysearch{
-    background-color: #ffffff;
-    color: #000000;
-}
-
 .mycardheader{
     background-color: #ababab;
 }
@@ -255,4 +250,41 @@ body{
   .form-label-group input::-ms-input-placeholder {
     color: #777;
   }
+}
+
+#divBusca{
+  background-color:#E0EEEE;
+  border:solid 2px #5F9EA0;
+  border-radius:10px;
+  width: 259px;
+  height: 34px;
+}
+
+#txtBusca{
+  float:left;
+  background-color:transparent;
+  padding-left:5px;
+  font-size:13px;
+  font-weight: bold;
+  border:transparent;
+  height:30px;
+  width:160px;
+}
+
+#btnBusca{
+  border:none;
+  float:left;
+  height: 30px;
+  border-radius:0 2px 2px 0;
+  width: 30px;
+  font-weight:bold;
+  background:#5F9EA0;
+  cursor: pointer;
+}
+
+.mysearchclear{
+  color: #000000;
+  border-radius:0 8px 8px 0;
+  font-weight: bold;
+  font-family:'Times New Roman', Times, serif;
 }
