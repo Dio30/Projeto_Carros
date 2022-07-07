@@ -81,12 +81,12 @@ WSGI_APPLICATION = 'carros_django.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'Meus Carros', # nome do banco de dados 
-        'USER': 'postgres', # nome do usuario criado depois que é criado o server
-        'PASSWORD': '98098694',
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.postgresql', 
+        'NAME': 'Meus Carros', # nome do banco de dados
+        'USER': 'postgres', # nome do usuario do banco de dados
+        'PASSWORD': '98098694', # senha do usuario do banco de dados
+        'HOST': 'localhost', # host do banco de dados
+        'PORT': '5432', # port do banco de dados
     }
 }
 
@@ -145,6 +145,7 @@ LOGOUT_REDIRECT_URL = 'login'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 #Email - para enviar emails no terminal
 #EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend" # para enviar emails internamente no django
