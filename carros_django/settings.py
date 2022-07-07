@@ -81,7 +81,7 @@ WSGI_APPLICATION = 'carros_django.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'Meus Carros', # nome do banco de dados 
         'USER': 'postgres', # nome do usuario criado depois que é criado o server
         'PASSWORD': '98098694',
@@ -117,6 +117,8 @@ TIME_ZONE = 'America/Sao_Paulo'
 
 USE_I18N = True
 
+USE_L10N = True
+
 USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
@@ -145,7 +147,7 @@ LOGOUT_REDIRECT_URL = 'login'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 #Email - para enviar emails no terminal
-#EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend" # para enviar emails internamento no django
+#EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend" # para enviar emails internamente no django
 
 # Para enviar emails em produção
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
@@ -164,4 +166,4 @@ DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
 AWS_S3_REGION_NAME = 'us-east-1'
 AWS_S3_SIGNATURE_VERSION = 's3v4'
 
-DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
+#DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
