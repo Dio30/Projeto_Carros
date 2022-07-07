@@ -81,7 +81,7 @@ WSGI_APPLICATION = 'carros_django.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'Meus Carros', # nome do banco de dados 
         'USER': 'postgres', # nome do usuario criado depois que é criado o server
         'PASSWORD': '98098694',
