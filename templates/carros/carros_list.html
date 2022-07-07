@@ -28,8 +28,8 @@
     <form method="GET" action=".">
         <div id="divBusca">
             <input type="search" id="txtBusca" name="nome_do_carro" value="{{ request.GET.nome_do_carro }}" 
-            autocomplete="off" placeholder="Digite o nome do carro">
-            <button type="submit" id="btnBusca"><i class="fa fa-search" aria-hidden="true"></i></button>
+            autocomplete="off" placeholder="Buscar por carro">
+            <button type="submit" class="mx-1" id="btnBusca"><i class="fa fa-search" aria-hidden="true"></i></button>
             <a href="{% url 'lista' %}" class="mysearchclear">Limpar</a>
         </div>
     </form>

@@ -266,8 +266,7 @@ body{
   float:left;
   background-color:transparent;
   padding-left:5px;
-  font-size:13px;
-  font-weight: bold;
+  font-size:16px;
   border:transparent;
   height:30px;
   width:160px;
@@ -276,15 +275,15 @@ body{
 #btnBusca{
   border:none;
   height: 32px;
-  border-radius:0 2px 2px 0;
+  border-radius:2px 2px 2px 2px;
   width: 30px;
-  font-weight:bold;
   background:#5F9EA0;
   cursor: pointer;
 }
 
 .mysearchclear{
   color: #20b59c;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 95%;
   box-sizing: border-box;
 }
