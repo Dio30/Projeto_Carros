@@ -24,8 +24,8 @@
                         <form method="POST" action="{% url 'cadastro' %}" autocomplete="off">
                             {% csrf_token %}
                             {{ form|crispy }}
-                            <button type="submit" class="btn btn-primary mx-2">Cadastrar</button>
-                            <a href="{% url 'login' %}" class="btn btn-info mybtn mx-2">Voltar</a>
+                            <center><button type="submit" class="btn btn-primary mx-2">Cadastrar</button>
+                            <a href="{% url 'login' %}" class="btn btn-info mybtn mx-2">Voltar</a></center>
                         </form>
                     </div>
                 </div>

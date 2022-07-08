@@ -127,7 +127,7 @@ class Carros(models.Model): # modelo para o CRUD de carros
     valor_do_carro = models.CharField(max_length=50, choices=valor_carros, verbose_name='Valor do Carro:', default='Não sabe informar')
     modelos_de_carros = models.CharField(max_length=30, choices=motor_carros, verbose_name='Motor:', default='1.0')
     fotos_de_carros = models.ImageField(upload_to='clients_photos', null=True, blank=True, verbose_name='Foto:')
-    motorizacao = models.TextField(choices=motorizacao, verbose_name='Turbo:', default='Não', help_text='O carro tem motorização turbo?')
+    motorizacao = models.CharField(max_length=10, verbose_name='Turbo:', choices=motorizacao, default='Não', help_text='O carro tem motorização turbo?')
     usuario = models.ForeignKey(User, on_delete=models.CASCADE)
     
     class Meta:

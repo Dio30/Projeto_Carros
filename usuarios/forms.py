@@ -1,3 +1,4 @@
+from tkinter import NONE
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
@@ -18,3 +19,10 @@ class UsuariosForm(UserCreationForm):# formulario para o cadastro de novos usuar
         if User.objects.filter(username=u).exists():
             raise ValidationError("O usuário {} já existe.".format(u))
         return u
+    
+    #def clean_email(self):
+    #    e = self.cleaned_data['email']
+    #    if User.objects.filter(email=e).exists():
+    #        raise ValidationError("O email {} já existe.".format(e))
+    #    return e
+        

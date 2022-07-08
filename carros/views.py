@@ -9,6 +9,7 @@ from django.contrib import messages
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import PasswordChangeView
+from .forms import CarrosForm
 
 class CarrosList(LoginRequiredMixin, ListView): # para listar os itens
     model = Carros
@@ -32,6 +33,7 @@ class CarrosList(LoginRequiredMixin, ListView): # para listar os itens
     
 class CarrosDetail(LoginRequiredMixin, DetailView): # para mostrar os itens em detalhes
     queryset = Carros.objects.all()
+    template_name = 'carros/carros_detail.html'
     login_url = reverse_lazy('login')
     
     def get_object(self, queryset=None):
@@ -39,8 +41,8 @@ class CarrosDetail(LoginRequiredMixin, DetailView): # para mostrar os itens em d
         return self.object
     
 class CarrosNew(LoginRequiredMixin, SuccessMessageMixin, CreateView): # para criar itens novos
-    model = Carros
-    fields = ['nome_do_carro', 'ano_de_fabricacao', 'ano_do_modelo', 'marcas_de_carros', 'valor_do_carro', 'modelos_de_carros', 'motorizacao','fotos_de_carros']
+    form_class = CarrosForm
+    template_name = 'carros/carros_form.html'
     success_url = reverse_lazy('lista')
     success_message = 'Carro adicionado com sucesso'
     login_url = reverse_lazy('login')
@@ -56,8 +58,8 @@ class CarrosNew(LoginRequiredMixin, SuccessMessageMixin, CreateView): # para cri
         return context
     
 class CarrosUpdate(LoginRequiredMixin, SuccessMessageMixin, UpdateView): # para editar os itens
-    model = Carros
-    fields = ['nome_do_carro', 'ano_de_fabricacao', 'ano_do_modelo', 'marcas_de_carros', 'valor_do_carro', 'modelos_de_carros', 'motorizacao','fotos_de_carros']
+    form_class = CarrosForm
+    template_name = 'carros/carros_form.html'
     success_url = reverse_lazy('lista')
     success_message = 'Carro atualizado com sucesso'
     login_url = reverse_lazy('login')
