@@ -24,4 +24,3 @@ class UsuariosForm(UserCreationForm):# formulario para o cadastro de novos usuar
     #    if User.objects.filter(email=e).exists():
     #        raise ValidationError("O email {} já existe.".format(e))
     #    return e
-        

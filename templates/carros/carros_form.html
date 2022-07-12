@@ -16,8 +16,8 @@
     <form method="post" action="." enctype="multipart/form-data" autocomplete="off">
         {% csrf_token %}
         <b class="mytext_perfil">{{ form|bootstrap }}</b><br>
-        <center><button type="submit" class="btn btn-success mx-4">Salvar</button>
-        <a href="{% url 'lista' %}" class="btn btn-primary mx-4">Voltar</a></center>
+        <center><button type="submit" class="btn btn-success mx-4 mybtn">Salvar</button>
+        <a href="{% url 'lista' %}" class="btn btn-primary mx-4 mybtn">Voltar</a></center>
     </form>
 {% endblock %}
 
@@ -26,8 +26,8 @@
     <div class="container">
         <br><br>
         <center><span class="text">Desenvolvido por Dione Rafael Padilha, 
-            <a href="https://www.linkedin.com/in/dione-padilha-a99864234/" target="_blank" class="btn btn-success btn-sm">Linkedin</a> e 
-            <a href="https://github.com/Dio30" target="_blank" class="btn btn-success btn-sm">GitHub</a></span></center>
+            <a href="https://www.linkedin.com/in/dione-padilha-a99864234/" target="_blank" class="btn btn-success btn-sm mybtn">Linkedin</a> e 
+            <a href="https://github.com/Dio30" target="_blank" class="btn btn-success btn-sm mybtn">GitHub</a></span></center>
     </div>
 </footer>
 {% endblock %}

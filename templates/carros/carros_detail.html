@@ -10,11 +10,11 @@
 
 {% include 'mensagens.html' %}
 
-<div class="form-content my-2 p-4">
+<div class="form-content my-1 mx-1 p-1">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-8">
-                <div class="card shadow-lg border-1 rounded-lg mt-0 mb-3">
+                <div class="card shadow-lg border-1 rounded-lg mt-3 mb-2">
                     <div class="card-header justify-content-center mycardheader">
                         <h2 class="font-weight-dark my-8 text-center">Detalhes de {{ object.nome_do_carro }}</h2>
                     </div>
@@ -28,7 +28,10 @@
                             <p>Turbo:<b class="mydetail"> {{ object.motorizacao }}</b></p><hr color="white">
                             <p>Foto: <img src="{{ object.image_url|default_if_none:'#' }}" style="max-width:200px" alt="" 
                             title="Foto de {{ user.username }}" crossorigin="anonymous"></p></b>
-                            <center><a href="{% url 'lista' %}" class="btn btn-primary">Voltar</a></center>
+                            <center><a href="{% url 'lista' %}" title="Voltar a Lista" class="btn btn-primary mybtn">Voltar</a>
+                            <a href="{% url 'editar' object.pk %}" title="Adicionar Carro" class="btn btn-warning mybtn">Editar</a>
+                            <a href="{% url 'deletar' object.pk %}" title="Editar" class="btn btn-danger mybtn">Delete</a></center>
+                            <br>
                         </div>
                     </div>
                 </div>
@@ -43,8 +46,8 @@
 <footer class="footer">
     <div class="container">
         <center><span class="text">Desenvolvido por Dione Rafael Padilha, 
-            <a href="https://www.linkedin.com/in/dione-padilha-a99864234/" target="_blank" class="btn btn-success btn-sm">Linkedin</a> e 
-            <a href="https://github.com/Dio30" target="_blank" class="btn btn-success btn-sm">GitHub</a></span></center>
+            <a href="https://www.linkedin.com/in/dione-padilha-a99864234/" target="_blank" class="btn btn-success btn-sm mybtn">Linkedin</a> e 
+            <a href="https://github.com/Dio30" target="_blank" class="btn btn-success btn-sm mybtn">GitHub</a></span></center>
     </div>
 </footer>
 {% endblock %}

@@ -1,17 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,300&display=swap');
 
-@media (min-width: 300px){
+@media (min-width: 300px){ /* para deixar o site responsivo */
     body{max-width: 100%;};
 }
 
-body{
+body{ /* o corpo de todo o site */
     background-color: #c5c5c5;
     background-image: url("/static/imagens/background.jpg");
     background-attachment: fixed;
     background-origin: padding-box;
 }
 
-.mythead{
+.mythead{ /* tabela head */
     background-color:#1f907d;
     color:#000000;
     text-align: center;
@@ -20,7 +20,7 @@ body{
     font-weight: bold;
 }
 
-.mytbody{
+.mytbody{ /* tabela body */
     background-color:#a7a8aa;
     color:#000000;
     text-align: center;
@@ -29,98 +29,105 @@ body{
     font-weight: bold;
 }
 
-.icon-eye{
+.icon-eye{ /* icone 'olho' na pagina pricipal */
     color: rgb(0, 0, 0);
 }
 
-.icon-trash{
-    color: rgb(255, 251, 251);
+.mybtn{ /* botões */
+    color: #ffffff;
+    background-color: #1197cc;
+    box-shadow: #094c66 6px 6px 6px;
+    border-radius: 5px;
+    border-top: 1px;
+    border-bottom: 1px;
+    transition: transform 200ms, box-shadow 200ms;
 }
 
-.mybtn{
-    color: #000000;
+.mybtn:active{ /* botões */
+  transform:translateY(4px) translateX(4px);
+  box-shadow: #094c66 0px 0px 0px;
 }
 
-.mynav{
+.mynav{ /* para a barra de navegação */
     background-color: #a0a0a0;
 }
 
-.mycardheader{
+.mycardheader{ /* para deixar os itens no card-header na cor definida */
     background-color: #ababab;
 }
 
-.mybody{
+.mybody{ /* para deixar os itens no card-body na cor definida */
     background-color: #868686;
     color: #000000;
     font-weight: bold;
 }
 
-.mybodydetail{
+.mybodydetail{ /* para as bordas area do detalhe  */
   background-color: #818181;
   font-weight: bold;
   border-style: groove;
   border-color: #000000;
 }
 
-.footer{
+.footer{ /* para o rodapé */
     color: #ffffff;
 }
 
-.my_a{
+.my_a{ /* para deixar os links numa cor mais agradavel */
     color: #110eba;
 }
 
-.my_a2{
+.my_a2{ /* para deixar os itens na area do perfil na cor definida */
     color: #0cd458;
 }
 
-.text-muted {
+.text-muted { /* texto para auxuliar quando fazer cadastro ou trocar a senha */
     color: #414141!important;
     font-size: 85%;
     font-weight: bold;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.myindice{
+.myindice { /* indice do detalhe */
     color: #000000;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 100%;
 }
 
-.mydetail{
+.mydetail{ /* para deixar os itens na area do detalhe na cor definida */
     color: #dcd214;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
     font-size: 100%;
 }
 
-.table-responsive{
+.table-responsive{ /* para deixar a tabela responsiva */
   overflow-x: hidden;
   overflow-y: hidden;
 }
 
-.table td{
+.table td{ /* tabela body */
   padding-left: 0.50rem;
   padding-right: 0.50rem;
   padding-top: 0.50rem;
   padding-bottom: 0.50rem;
 }
 
-.table th{
+.table th{ /* tabela head */
   padding-left: 0.50rem;
   padding-right: 0.50rem;
   padding-top: 0.50rem;
   padding-bottom: 0.50rem;
 }
 
-.my_h2{
+.my_h2{ /* o "bem vindo na pagina inicial" */
     color: #ffffff;
 }
 
-.my_u{
+.my_u{ /* sublinhado no "Bem vindo" */
     color: #c7c7c7;
 }
 
-.mytext_perfil{
+.mytext_perfil{ /* perfil do usuario */
     color: #ffffff;
     color-scheme: dark;
 }
@@ -131,31 +138,42 @@ body{
   font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.invalid-feedback{
+.invalid-feedback{ /* mensagem de erro caso digitar algum campo errado */
   color:#c41f1f;
   font-size: 85%;
   font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.form-signin {
+.myimg{ /* o olho na parte do login*/
+	position: absolute;
+  top: 50%;
+  right: 10px;
+	transform: translateY(-50%);
+  width: 30px;
+	height: 30px;
+	cursor: pointer;
+}
+
+.form-signin { /* suporte para o login dinamico */
   width: 100%;
   max-width: 420px;
   padding: 15px;
   margin: auto;
 }
 
-.form-label-group {
+.form-label-group { /* suporte para o login dinamico */
   position: relative;
   margin-bottom: 1rem;
 }
 
 .form-label-group input,
-.form-label-group label {
+.form-label-group label { /* suporte para o login dinamico */
   height: 3.125rem;
   padding: .75rem;
+  padding-right: 40px;
 }
 
-.form-label-group label {
+.form-label-group label { /* suporte para o login dinamico */
   position: absolute;
   top: 0;
   left: 0;
@@ -169,65 +187,66 @@ body{
   border: 1px solid transparent;
   border-radius: .25rem;
   transition: all .1s ease-in-out;
+  padding-right: 110px;
 }
 
-.form-label-group input::-webkit-input-placeholder {
+.form-label-group input::-webkit-input-placeholder { /* suporte para o login dinamico */
   color: transparent;
 }
 
-.form-label-group input::-moz-placeholder {
+.form-label-group input::-moz-placeholder { /* suporte para o login dinamico */
   color: transparent;
 }
 
-.form-label-group input:-ms-input-placeholder {
+.form-label-group input:-ms-input-placeholder { /* suporte para o login dinamico */
   color: transparent;
 }
 
-.form-label-group input::-ms-input-placeholder {
+.form-label-group input::-ms-input-placeholder { /* suporte para o login dinamico */
   color: transparent;
 }
 
-.form-label-group input::placeholder {
+.form-label-group input::placeholder { /* suporte para o login dinamico */
   color: transparent;
 }
 
-.form-label-group input:not(:-moz-placeholder-shown) {
+.form-label-group input:not(:-moz-placeholder-shown) { /* suporte para o login dinamico */
   padding-top: 1.25rem;
   padding-bottom: .25rem;
 }
 
-.form-label-group input:not(:-ms-input-placeholder) {
+.form-label-group input:not(:-ms-input-placeholder) { /* suporte para o login dinamico */
   padding-top: 1.25rem;
   padding-bottom: .25rem;
 }
 
-.form-label-group input:not(:placeholder-shown) {
+.form-label-group input:not(:placeholder-shown) { /* suporte para o login dinamico */
   padding-top: 1.25rem;
   padding-bottom: .25rem;
 }
 
-.form-label-group input:not(:-moz-placeholder-shown) ~ label {
+.form-label-group input:not(:-moz-placeholder-shown) ~ label { /* suporte para o login dinamico */
   padding-top: .25rem;
   padding-bottom: .25rem;
   font-size: 12px;
   color: #777;
 }
 
-.form-label-group input:not(:-ms-input-placeholder) ~ label {
+.form-label-group input:not(:-ms-input-placeholder) ~ label { /* suporte para o login dinamico */
   padding-top: .25rem;
   padding-bottom: .25rem;
   font-size: 12px;
   color: #777;
 }
 
-.form-label-group input:not(:placeholder-shown) ~ label {
+.form-label-group input:not(:placeholder-shown) ~ label { /* suporte para o login dinamico */
   padding-top: .25rem;
   padding-bottom: .25rem;
   font-size: 12px;
   color: #777;
 }
 
-.form-label-group input:-webkit-autofill ~ label {
+.form-label-group input:-webkit-autofill ~ label { /* suporte para o login dinamico */
   padding-top: .25rem;
   padding-bottom: .25rem;
   font-size: 12px;
@@ -236,7 +255,7 @@ body{
 
 /* Fallback for Edge
 -------------------------------------------------- */
-@supports (-ms-ime-align: auto) {
+@supports (-ms-ime-align: auto) { /* suporte para o login dinamico */
   .form-label-group {
     display: -ms-flexbox;
     display: flex;
@@ -253,7 +272,7 @@ body{
   }
 }
 
-#divBusca{
+#divBusca{ /* area do campo de pesquisa */
   background-color:#E0EEEE;
   border:solid 2px #5F9EA0;
   border-radius:10px;
@@ -263,7 +282,7 @@ body{
   max-height: 100%;
 }
 
-#txtBusca{
+#txtBusca{ /* tamanho do texto de pesquisa */
   float:left;
   background-color:transparent;
   padding-left:5px;
@@ -273,16 +292,16 @@ body{
   width:160px;
 }
 
-#btnBusca{
+#btnBusca{ /* botão de pesquisar */
   border:none;
-  height: 32px;
-  border-radius:2px 2px 2px 2px;
+  height: 30px;
+  border-radius: 2px 2px 2px 2px;
   width: 30px;
   background:#5F9EA0;
   cursor: pointer;
 }
 
-.mysearchclear{
+.mysearchclear{ /* botao de limpar da pesquisa */
   color: #20b59c;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 95%;

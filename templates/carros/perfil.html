@@ -22,15 +22,21 @@
 
                         <form action="{% url 'perfil' %}" method="POST" enctype="multipart/form-data">
                             {% csrf_token %}
-                        
-                            <b><p>Usuario:</p>
-                            <input type="text" class="form-control" value="{{ user.username }}" name="username" autocomplete="off" required>
+
+                            <div class="form-label-group">
+                                <input type="text" id="inputUser" class="form-control"  
+                                placeholder="Usuário" autocomplete="off" value="{{ user.username }}" spellcheck="false" name='username' required>
+                                <label for="inputUser">Usuário</label>
+                            </div>
                             <br>
-                            <p>Email:</p>
-                            <input type="email" class="form-control" value="{{ user.email }}" name="email" autocomplete="off" required></b>
+                            <div class="form-label-group">
+                                <input type="email" id="inputUser" class="form-control"  
+                                placeholder="Email" autocomplete="off" value="{{ user.email }}" spellcheck="false" name='email'>
+                                <label for="inputUser">Email</label>
+                            </div>
                             <br>
-                            <center><input type="submit" class="btn btn-success mx-3" value="Salvar">
-                            <a href="{% url 'lista' %}" class="btn btn-primary mx-3">Voltar</a></center>
+                            <center><input type="submit" class="btn btn-success mx-3 mybtn" value="Salvar">
+                            <a href="{% url 'lista' %}" class="btn btn-primary mx-3 mybtn">Voltar</a></center>
                         </form>
                     </div>
                 </div>
