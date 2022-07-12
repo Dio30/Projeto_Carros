@@ -81,14 +81,14 @@ body{ /* o corpo de todo o site */
     color: #0cd458;
 }
 
-.text-muted { /* texto para auxuliar quando fazer cadastro ou trocar a senha */
+.text-muted { /* texto para auxuliar quando fazer cadastro */
     color: #414141!important;
     font-size: 85%;
     font-weight: bold;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.text-muted2 { /* texto para auxuliar quando fazer cadastro ou trocar a senha */
+.text-muted2 { /* texto para auxuliar quando trocar a senha */
   color: #414141!important;
   font-size: 85%;
   font-weight: bold;
@@ -99,13 +99,13 @@ body{ /* o corpo de todo o site */
 .myindice { /* indice do detalhe */
     color: #000000;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 100%;
+    font-size: 105%;
 }
 
 .mydetail{ /* para deixar os itens na area do detalhe na cor definida */
     color: #dcd214;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
-    font-size: 100%;
+    font-size: 105%;
 }
 
 .table-responsive{ /* para deixar a tabela responsiva */
@@ -162,6 +162,26 @@ body{ /* o corpo de todo o site */
 	cursor: pointer;
 }
 
+.myimg1{ /* o olho na parte do alterar senha*/
+	position: absolute;
+  top: 50%;
+  right: 10px;
+	transform: translateY(-50%);
+  width: 30px;
+	height: 30px;
+	cursor: pointer;
+}
+
+.myimg2{ /* o olho na parte do alterar senha*/
+	position: absolute;
+  top: 50%;
+  right: 10px;
+	transform: translateY(-50%);
+  width: 30px;
+	height: 30px;
+	cursor: pointer;
+}
+
 .form-signin { /* suporte para o login dinamico */
   width: 100%;
   max-width: 420px;
@@ -183,8 +203,8 @@ body{ /* o corpo de todo o site */
 
 .form-label-group label { /* suporte para o login dinamico */
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 0px;
+  left: 0px;
   display: block;
   width: 100%;
   margin-bottom: 0; /* Override default `<label>` margin */
@@ -195,7 +215,8 @@ body{ /* o corpo de todo o site */
   border: 1px solid transparent;
   border-radius: .25rem;
   transition: all .1s ease-in-out;
-  padding-right: 110px;
+  font-size: 100%;
+  font-family:Arial, Helvetica, sans-serif;
 }
 
 .form-label-group input::-webkit-input-placeholder { /* suporte para o login dinamico */

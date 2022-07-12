@@ -9,7 +9,7 @@ from django.contrib import messages
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import PasswordChangeView
-from .forms import CarrosForm
+from .forms import CarrosForm, PasswordForm
 
 class CarrosList(LoginRequiredMixin, ListView): # para listar os itens
     model = Carros
@@ -84,6 +84,7 @@ class CarrosDelete(LoginRequiredMixin, SuccessMessageMixin, DeleteView): # para 
         return self.object
 
 class ChangePasswordView(LoginRequiredMixin, SuccessMessageMixin, PasswordChangeView): #caso queria alterar a sua senha
+    form_class = PasswordForm
     template_name = 'registration/change_password.html'
     success_message = "Senha alterada com sucesso"
     success_url = reverse_lazy('lista')

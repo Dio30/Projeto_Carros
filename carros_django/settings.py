@@ -140,13 +140,13 @@ CRISPY_FAIL_SILENTLY = not DEBUG
 LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'lista'
 LOGOUT_REDIRECT_URL = 'login'
-SESSION_COOKIE_AGE = 800 #segundos
+SESSION_COOKIE_AGE = 172800 # quantos segundos a pagina ficará aberta até voltar ao login
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https') # para maior segurança
 
 #Email - para enviar emails no terminal
 #EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend" # para enviar emails internamente no django
