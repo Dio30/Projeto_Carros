@@ -70,7 +70,7 @@ class CarrosUpdate(LoginRequiredMixin, SuccessMessageMixin, UpdateView): # para 
     
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
-        context['titulo'] = "Editar Carros"
+        context['titulo'] = "Editar"
         return context
 
 class CarrosDelete(LoginRequiredMixin, SuccessMessageMixin, DeleteView): # para deletar os itens

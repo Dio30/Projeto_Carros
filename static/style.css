@@ -88,6 +88,15 @@ body{ /* o corpo de todo o site */
     font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
+.text-muted2 { /* texto para auxuliar quando fazer cadastro ou trocar a senha */
+  color: #414141!important;
+  font-size: 85%;
+  font-weight: bold;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
 .myindice { /* indice do detalhe */
     color: #000000;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -294,7 +303,7 @@ body{ /* o corpo de todo o site */
 
 #btnBusca{ /* botão de pesquisar */
   border:none;
-  height: 30px;
+  height: 31px;
   border-radius: 2px 2px 2px 2px;
   width: 30px;
   background:#5F9EA0;

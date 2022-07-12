@@ -12,7 +12,7 @@
 
 {% include 'mensagens.html' %}
 
-<center><h2 class="mytext_perfil"><u>{{ titulo }}</u></h2></center><br>
+<center><h2 class="mytext_perfil"><u>{{ titulo }} {{ object.nome_do_carro }}</u></h2></center><br>
     <form method="post" action="." enctype="multipart/form-data" autocomplete="off">
         {% csrf_token %}
         <b class="mytext_perfil">{{ form|bootstrap }}</b><br>
