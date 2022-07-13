@@ -10,6 +10,8 @@
 
 {% include 'mensagens.html' %}
 
+{% if user.is_authenticated %}
+
 <h3><center><font color="white">Tem certeza que deseja deletar o carro {{ object.nome_do_carro }} ?</h3></center></font><br>
     <form method="post" action=".">
         {% csrf_token %}
@@ -21,7 +23,9 @@
             onclick="return confirm('Tem certeza que deseja deletar o carro {{ object.nome_do_carro }} ?')">Deletar</button>
         <a href="{% url 'lista' %}" class="btn btn-primary mx-3 mybtn" title="Lista">Voltar</a></center>
     </form>
-
+    {% else %}
+    <h2>Você não está autorizado a acessar essa pagina, <a href="{% url 'login' %}">clique aqui</a>para ser redirecionado a pagina de login</h2>
+    {% endif %}
 {% endblock %}
 
 {% block footer %}

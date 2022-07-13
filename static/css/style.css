@@ -34,10 +34,10 @@ body{ /* o corpo de todo o site */
 }
 
 .mybtn{ /* botões */
-    color: #ffffff;
+    color: #000000;
     background-color: #1197cc;
-    box-shadow: #094c66 6px 6px 6px;
-    border-radius: 5px;
+    box-shadow: #093e66 5px 8px 8px;
+    border-radius: 10px;
     border-top: 1px;
     border-bottom: 1px;
     transition: transform 200ms, box-shadow 200ms;

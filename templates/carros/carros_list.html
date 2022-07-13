@@ -10,6 +10,8 @@
 
 {% include 'mensagens.html' %}
 
+{% if user.is_authenticated %}
+
 <br><nav class="navbar navbar-dark mynav">
     <ul class="nav justify-content-start">
         <a href="{% url 'perfil' %}" class="btn btn-primary btn-sm mybtn" title="Perfil">Perfil</a>
@@ -118,6 +120,10 @@
 
     {% endif %}
 </ul>
+
+{% else %}
+<h2>Você não está autorizado a acessar essa pagina, <a href="{% url 'login' %}">clique aqui</a>para ser redirecionado a pagina de login</h2>
+{% endif %}
 
 {% endblock %}
 

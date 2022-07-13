@@ -10,6 +10,8 @@
 
 {% include 'mensagens.html' %}
 
+{% if user.is_authenticated %}
+
 <div class="form-content my-1 p-3">
     <div class="container">
         <div class="row justify-content-center">
@@ -50,6 +52,11 @@
     <li>Se quiser somente trocar a sua senha clique em <a href="{% url 'password_change' %}" class="my_a2">alterar senha</a>,
     se esqueceu da senha será <u>obrigatório cadastrar algum email válido aqui</u> e depois 
     <a href="{% url 'password_reset' %}" class="my_a2">clique aqui</a> para enviar o email.</li></b>
+    
+    {% else %}
+    <h2>Você não está autorizado a acessar essa pagina, <a href="{% url 'login' %}">clique aqui   
+    </a>para ser redirecionado a pagina de login</h2>
+    {% endif %}
 
 {% endblock %}
 

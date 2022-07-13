@@ -21,7 +21,7 @@
                         <h2 class="font-weight-dark my-8 text-center">Login</h2>
                     </div>
                     <div class="card-body mybody">
-                        <form method="POST" action="." autocomplete="off">
+                        <form method="POST" action="{% url 'login' %}" autocomplete="off">
                             {% csrf_token %}
 
                             {% if form.non_field_errors %}
@@ -32,8 +32,7 @@
 
                             <div class="form-label-group">
                                 <input name='username' type="text" id="inputUser" class="form-control"  
-                                placeholder="Usuário" autocomplete="off" spellcheck="false" autocapitalize="words" 
-                                style="text-transform: capitalize;" required autofocus>
+                                placeholder="Usuário" autocomplete="off" spellcheck="false" autocapitalize="off" required autofocus>
                                 <label for="inputUser">Usuário</label>
                             </div>
                             
@@ -50,9 +49,10 @@
                             
                             <p class="text-center">Não tem uma conta? <a href="{% url 'cadastro' %}" class="my_a">Crie uma conta aqui</a>.</p>
                             <br>
-                            <center>Meu <a href="https://www.linkedin.com/in/dione-padilha-a99864234/" 
-                            target="_blank" class="btn btn-primary mybtn">Linkedin</a> ou 
-                            <a href="https://github.com/Dio30" target="_blank" class="btn btn-info mybtn">GitHub</a></center>
+                            <center><a href="https://www.linkedin.com/in/dione-padilha-a99864234/" 
+                            target="_blank" class="btn btn-primary mybtn" title="Linkedin"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a> ou 
+                            <a href="https://github.com/Dio30" target="_blank" class="btn btn-info mybtn" title="Github">
+                                <i class="fa fa-github" aria-hidden="true"></i></a></center>
                         </form>
                     </div>
                 </div>

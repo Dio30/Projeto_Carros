@@ -12,6 +12,8 @@
 
 {% include 'mensagens.html' %}
 
+{% if user.is_authenticated %}
+
 <center><h2 class="mytext_perfil"><u>{{ titulo }} {{ object.nome_do_carro }}</u></h2></center><br>
     <form method="post" action="." enctype="multipart/form-data" autocomplete="off">
         {% csrf_token %}
@@ -19,6 +21,10 @@
         <center><button type="submit" class="btn btn-success mx-4 mybtn">Salvar</button>
         <a href="{% url 'lista' %}" class="btn btn-primary mx-4 mybtn">Voltar</a></center>
     </form>
+
+    {% else %}
+    <h2>Você não está autorizado a acessar essa pagina, <a href="{% url 'login' %}">clique aqui</a>para ser redirecionado a pagina de login</h2>
+    {% endif %}
 {% endblock %}
 
 {% block footer %}
