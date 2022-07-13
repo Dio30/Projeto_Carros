@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.humanize',
+    'django.contrib.postgres',
     # meus apps
     'bootstrapform',
     'static',
@@ -146,7 +147,8 @@ SESSION_COOKIE_AGE = 172800 # quantos segundos a pagina ficará aberta até volt
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https') # para maior segurança
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')# para maior segurança
+CACHE_BACKEND = 'locmem:///'
 
 #Email - para enviar emails no terminal
 #EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend" # para enviar emails internamente no django
