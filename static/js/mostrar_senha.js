@@ -48,3 +48,20 @@ function showSenha(){
 		button.src = 'https://icon-library.com/images/icon-eyes/icon-eyes-12.jpg'
 	}
 }
+
+function registrarPassword(){
+
+	var registrar = document.getElementById('inputPassword3');
+	const press = document.querySelector('.myimg3');
+
+	if (registrar.type == 'password') 
+	{
+		registrar.type = 'text'
+		press.src = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8SA14-A-zoRaiJ2GdUiESsisaFiHNYrUZtjtjZqnth0D_KdfkwzQWIdCjbzhAoYKPTvs&usqp=CAU'
+	}
+	else
+	{
+		registrar.type = 'password'
+		press.src = 'https://icon-library.com/images/icon-eyes/icon-eyes-12.jpg'
+	}
+}

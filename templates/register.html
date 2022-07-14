@@ -12,20 +12,61 @@
 
 {% include 'mensagens.html' %}
 
-<div class="form-content">
+<div class="form-content my-2">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-8">
                 <div class="card shadow-lg border-1 rounded-lg mt-lg-2 mb-lg-2">
                     <div class="card-header justify-content-center mycardheader">
-                        <h2 class="font-weight-dark my-10 text-center">Novo Usuário</h2>
+                        <h2 class="font-weight-dark text-center">Novo Usuário</h2>
                     </div>
                     <div class="card-body mybody">
                         <form method="POST" action="{% url 'cadastro' %}" autocomplete="off">
                             {% csrf_token %}
-                            {{ form|crispy }}
-                            <center><button type="submit" class="btn btn-primary mx-2 mybtn">Cadastrar</button>
-                            <a href="{% url 'login' %}" class="btn btn-info mybtn mx-2 mybtn">Voltar</a></center>
+
+                            <u>Itens com * são obrigatórios</u>
+                            <br><br>
+                            <div class="form-label-group">
+                                <input name='username' type="text" class="form-control" id="inputUser" placeholder="Usuário"
+                                autocomplete="off" spellcheck="false" autocapitalize="off" required autofocus>
+                                <label for="inputUser">Usuário*</label>
+                                <font class='mytext'>{{ form.username.errors }}</font>
+                                <font class="text-muted">Obrigatório 3 caracteres ou mais. Letras, números e @/./+/-/_ apenas. 
+                                Por favor não cadastre um usuário todo em letras maiusculas. (Não deixar o CAPSLOCK ligado)</font>
+                            </div>
+                            
+                            <div class="form-label-group">
+                                
+                                <input name='email' type="email" id="inputEmail" class="form-control" placeholder="Email"
+                                autocomplete="off" spellcheck="false" autocapitalize="off">
+                                <label for="inputEmail">Email</label>
+                                <font class='mytext'>{{ form.email.errors }}</font>
+                                <font class="text-muted">Insira um email valido, por exemplo: exemplo@exemplo.com</font>
+                            </div>
+                            
+                            <div class="form-label-group">
+                                <input name='password1' type="password" placeholder="Senha" 
+                                id="inputPassword" class="form-control" autocomplete="off" spellcheck="false" required>
+                                <label for="inputPassword">Senha*</label>
+                                <img src="https://icon-library.com/images/icon-eyes/icon-eyes-12.jpg" class="myimg" onclick="mostrarSenha()">
+                            </div>
+
+                            <ul class="text-muted">
+                                <li>Sua senha não pode ser muito parecida com o resto das suas informações pessoais.</li>
+                                <li>Sua senha precisa conter pelo menos 8 caracteres.</li>
+                                <li>Sua senha não pode ser uma senha comumente utilizada.</li>
+                                <li>Sua senha não pode ser inteiramente numérica.</li>
+                            </ul>
+                            <div class="form-label-group">
+                                <input name='password2' type="password" id="inputPassword3" placeholder="Confirmar Senha"
+                                class="form-control" autocomplete="off" spellcheck="false" required>
+                                <label for="inputPassword3">Confirmar Senha*</label>
+                                <img src="https://icon-library.com/images/icon-eyes/icon-eyes-12.jpg" class="myimg3" onclick="registrarPassword()">
+                            </div>
+                            <font class='mytext'>{{ form.password2.errors }}</font>
+                            <p class="text-muted2">Informe a mesma senha informada anteriormente, para verificação.</p>
+                            <center><button type="submit" class="btn btn-primary mx-3 mybtn">Cadastrar</button>
+                            <a href="{% url 'login' %}" class="btn btn-info mybtn mx-3 mybtn">Voltar</a></center>
                         </form>
                     </div>
                 </div>
@@ -34,12 +75,4 @@
     </div>
 </div>
         
-{% endblock %}
-
-{% block footer %}
-<footer class="footer">
-    <div class="container">
-        <center><span class="text">Desenvolvido por Dione Rafael Padilha</span></center>
-    </div>
-</footer>
 {% endblock %}

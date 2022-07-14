@@ -6,7 +6,7 @@
 
 {% load humanize %}
 
-{% block title %} {{ titulo }} {% endblock %}
+{% block title %} {{ titulo }} {{ object.nome_do_carro }} {% endblock %}
 
 {% block main %}
 
@@ -14,10 +14,10 @@
 
 {% if user.is_authenticated %}
 
-<center><h2 class="mytext_perfil"><u>{{ titulo }} {{ object.nome_do_carro }}</u></h2></center><br>
+<center><h2 class="mytext_perfil"><u>{{ titulo }} {{ object.nome_do_carro }}</u></h2></center>
     <form method="post" action="." enctype="multipart/form-data" autocomplete="off">
         {% csrf_token %}
-        <b class="mytext_perfil">{{ form|bootstrap }}</b><br>
+        <b class="mytext_perfil">{{ form|bootstrap }}</b>
         <center><button type="submit" class="btn btn-success mx-4 mybtn">Salvar</button>
         <a href="{% url 'lista' %}" class="btn btn-primary mx-4 mybtn">Voltar</a></center>
     </form>
@@ -30,10 +30,10 @@
 {% block footer %}
 <footer class="footer">
     <div class="container">
-        <br><br>
+        <br>
         <center><span class="text">Desenvolvido por Dione Rafael Padilha, 
-            <a href="https://www.linkedin.com/in/dione-padilha-a99864234/" target="_blank" class="btn btn-success btn-sm mybtn">Linkedin</a> e 
-            <a href="https://github.com/Dio30" target="_blank" class="btn btn-success btn-sm mybtn">GitHub</a></span></center>
+            <a href="https://www.linkedin.com/in/dione-padilha-a99864234/" target="_blank" class="btn btn-primary btn-sm mybtn">Linkedin</a> e 
+            <a href="https://github.com/Dio30" target="_blank" class="btn btn-dark btn-sm mybtn">GitHub</a></span></center>
     </div>
-</footer>
+</footer><br>
 {% endblock %}

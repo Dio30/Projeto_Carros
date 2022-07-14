@@ -135,7 +135,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Configuarações do crispy
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
-CRISPY_FAIL_SILENTLY = not DEBUG
 
 # Autenticação de login e logout
 LOGIN_URL = 'login'
@@ -148,7 +147,6 @@ SESSION_COOKIE_AGE = 172800 # quantos segundos a pagina ficará aberta até volt
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')# para maior segurança
-CACHE_BACKEND = 'locmem:///'
 
 #Email - para enviar emails no terminal
 #EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend" # para enviar emails internamente no django

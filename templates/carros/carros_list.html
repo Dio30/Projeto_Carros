@@ -18,7 +18,7 @@
     </ul>
 
     <ul class="nav justify-content-center">
-        <a href="{% url 'password_change' %}" class="btn btn-info btn-sm mybtn" title="Trocar Senha">Trocar Senha</a>
+        <a href="{% url 'password_change' %}" class="btn btn-warning btn-sm mybtn" title="Trocar Senha">Trocar Senha</a>
     </ul>
 
     <ul class="nav justify-content-end">
@@ -37,7 +37,7 @@
     </form>
 </center>
 <br>
-<table class="table table-bordered table-dark">
+<table class="table table-hover">
     <thead class="mythead">
         <tr>
             <th>Nome do Carro</th>
@@ -55,7 +55,7 @@
                 <td><a href="{% url 'editar' carro.pk %}" title="Editar" class="btn btn-warning btn-sm mybtn">
                     <i class="fa fa-edit icon-eye" aria-hidden="true"></i></a></td>
                 <td><a href="{% url 'deletar' carro.pk %}" title="Deletar" class="btn btn-danger btn-sm mybtn">
-                    <i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
+                    <i class="fa fa-trash-o icon-eye" aria-hidden="true"></i></a></td>
         </tr>
             {% endfor %}
     </tbody>
@@ -132,8 +132,8 @@
     <div class="container">
         <br><br>
         <center><span class="text">Desenvolvido por Dione Rafael Padilha,
-        <a href="https://www.linkedin.com/in/dione-padilha-a99864234/" target="_blank" class="btn btn-success btn-sm mybtn">Linkedin</a> e 
-        <a href="https://github.com/Dio30" target="_blank" class="btn btn-success btn-sm mybtn">GitHub</a></span></center><br>
+        <a href="https://www.linkedin.com/in/dione-padilha-a99864234/" target="_blank" class="btn btn-primary btn-sm mybtn">Linkedin</a> e 
+        <a href="https://github.com/Dio30" target="_blank" class="btn btn-dark btn-sm mybtn">GitHub</a></span></center><br>
     </div>
 </footer>
 {% endblock %}

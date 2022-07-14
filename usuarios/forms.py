@@ -4,12 +4,8 @@ from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
 
 class UsuariosForm(UserCreationForm):# formulario para o cadastro de novos usuarios
-    username = forms.CharField(min_length=3, required=True, label='Usuário', 
-                help_text='''Obrigatório 3 caracteres ou mais. 
-                Letras, números e @/./+/-/_ apenas. 
-                Por favor não cadastre um usuário todo em letras maiusculas. (Não deixar o CAPSLOCK ligado)''')
-    
-    email = forms.EmailField(max_length=100, required=False, help_text="Insira um email valido, por exemplo: exemplo@exemplo.com")
+    username = forms.CharField(min_length=3, required=True, label='Usuário')
+    email = forms.EmailField(min_length=11, required=False)
     
     class Meta:
         model = User
