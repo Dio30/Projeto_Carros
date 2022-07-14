@@ -28,7 +28,7 @@
                             <p>Valor:<b class="mydetail"> {{ object.valor_do_carro }}</b></p><hr color="white">
                             <p>Motor:<b class="mydetail"> {{ object.modelos_de_carros }}</b></p><hr color="white">
                             <p>Turbo:<b class="mydetail"> {{ object.motorizacao }}</b></p><hr color="white">
-                            <p>Foto: <img src="{{ object.image_url|default_if_none:'#' }}" style="max-width:240px" alt="" 
+                            <p>Foto: <img src="{{ object.image_url|default_if_none:'#' }}" style="max-width:225px" alt="" 
                             title="Foto de {{ user.username }}" crossorigin="anonymous"></p></b>
 
                             <center><a href="{% url 'lista' %}" title="Voltar a Lista" class="btn btn-primary mx-2 mybtn">
@@ -37,10 +37,33 @@
                             <a href="{% url 'editar' object.pk %}" title="Editar" class="btn btn-warning mx-2 mybtn">
                                 <i class="fa fa-edit icon-eye" aria-hidden="true"></i></a>
 
-                            <a href="{% url 'deletar' object.pk %}" title="Deletar" class="btn btn-danger mx-2 mybtn">
-                                <i class="fa fa-trash-o" aria-hidden="true"></i></a></center>
-                            
-                            <br>
+                                <a href="{% url 'deletar' object.pk %}" title="Deletar" class="btn btn-danger mx-2 mybtn"
+                                data-toggle="modal" data-target="#exampleModal{{ object.pk }}">
+                                <i class="fa fa-trash-o icon-eye" aria-hidden="true"></i></a>
+                                <!-- Modal -->
+                            <div class="modal fade" id="exampleModal{{ object.pk }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header mydiv">
+                                            <h5 class="modal-title" id="exampleModalLabel">Tem certeza que deseja deletar o carro {{ object.nome_do_carro }}?</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span title="Fechar" aria-hidden="true">&times;</span></button>
+                                        </div>
+                                        <div class="modal-body mydiv">
+                                            <form method="post" action="{% url 'deletar' object.pk %}">
+                                                {% csrf_token %}
+                                                <img src="{{ object.image_url|default_if_none:'#' }}" style="max-width:290px" alt="" 
+                                                    title="Foto de {{ user.username }}" crossorigin="anonymous">
+                                        </div>
+                                        <div class="modal-footer mydiv">
+                                            <button type="submit" title="Deletar" class="btn btn-danger btn-sm mymodalbutton">Deletar</button>
+                                            <button type="button" title="Voltar" class="btn btn-primary btn-sm" data-dismiss="modal">Voltar</button>
+                                        </div></form>
+                                    </div>
+                                </div>
+                            </div>
+                        </center>   
+                        <br>
                         </div>
                     </div>
                 </div>
