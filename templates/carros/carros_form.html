@@ -19,9 +19,9 @@
         {% csrf_token %}
         <b class="mytext_form">{{ form|bootstrap }}</b>
         <center><input type="submit" value="Salvar" class="btn btn-success mx-4 mybtn">
-        <a href="{% url 'lista' %}" class="btn btn-primary mx-4 mybtn">Voltar</a></center><br><br><br>
+        <a href="{% url 'lista' %}" class="btn btn-primary mx-4 mybtn">Voltar</a></center>
     </form>
-
+<br><br><br><br>
     {% else %}
     <h2>Você não está autorizado a acessar essa pagina, 
     <a href="{% url 'login' %}">clique aqui</a>para ser redirecionado a pagina de login</h2>
@@ -35,5 +35,5 @@
         <a href="https://www.linkedin.com/in/dione-padilha-a99864234/" target="_blank" class="btn btn-primary btn-sm mybtn">Linkedin</a> e 
         <a href="https://github.com/Dio30" target="_blank" class="btn btn-dark btn-sm mybtn">GitHub</a></span></center>
     </div>
-</footer><br>
+</footer><br><br>
 {% endblock %}
