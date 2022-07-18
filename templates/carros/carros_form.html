@@ -15,25 +15,25 @@
 {% if user.is_authenticated %}
 
 <center><h2 class="mytext_form"><u>{{ titulo }} {{ object.nome_do_carro }}</u></h2></center>
-    <form method="post" action="." enctype="multipart/form-data" autocomplete="off">
+    <form method="POST" action="." enctype="multipart/form-data" autocomplete="off">
         {% csrf_token %}
         <b class="mytext_form">{{ form|bootstrap }}</b>
-        <center><button type="submit" class="btn btn-success mx-4 mybtn">Salvar</button>
-        <a href="{% url 'lista' %}" class="btn btn-primary mx-4 mybtn">Voltar</a></center>
+        <center><input type="submit" value="Salvar" class="btn btn-success mx-4 mybtn">
+        <a href="{% url 'lista' %}" class="btn btn-primary mx-4 mybtn">Voltar</a></center><br><br><br>
     </form>
 
     {% else %}
-    <h2>Você não está autorizado a acessar essa pagina, <a href="{% url 'login' %}">clique aqui</a>para ser redirecionado a pagina de login</h2>
+    <h2>Você não está autorizado a acessar essa pagina, 
+    <a href="{% url 'login' %}">clique aqui</a>para ser redirecionado a pagina de login</h2>
     {% endif %}
 {% endblock %}
 
 {% block footer %}
 <footer class="footer">
     <div class="container">
-        <br>
         <center><span class="text">Desenvolvido por Dione Rafael Padilha, 
-            <a href="https://www.linkedin.com/in/dione-padilha-a99864234/" target="_blank" class="btn btn-primary btn-sm mybtn">Linkedin</a> e 
-            <a href="https://github.com/Dio30" target="_blank" class="btn btn-dark btn-sm mybtn">GitHub</a></span></center>
+        <a href="https://www.linkedin.com/in/dione-padilha-a99864234/" target="_blank" class="btn btn-primary btn-sm mybtn">Linkedin</a> e 
+        <a href="https://github.com/Dio30" target="_blank" class="btn btn-dark btn-sm mybtn">GitHub</a></span></center>
     </div>
 </footer><br>
 {% endblock %}
