@@ -14,10 +14,10 @@
 
 {% if user.is_authenticated %}
 
-<center><h2 class="mytext_perfil"><u>{{ titulo }} {{ object.nome_do_carro }}</u></h2></center>
+<center><h2 class="mytext_form"><u>{{ titulo }} {{ object.nome_do_carro }}</u></h2></center>
     <form method="post" action="." enctype="multipart/form-data" autocomplete="off">
         {% csrf_token %}
-        <b class="mytext_perfil">{{ form|bootstrap }}</b>
+        <b class="mytext_form">{{ form|bootstrap }}</b>
         <center><button type="submit" class="btn btn-success mx-4 mybtn">Salvar</button>
         <a href="{% url 'lista' %}" class="btn btn-primary mx-4 mybtn">Voltar</a></center>
     </form>

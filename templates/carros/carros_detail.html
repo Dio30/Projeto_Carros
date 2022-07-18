@@ -12,7 +12,7 @@
 
 {% if user.is_authenticated %}
 <!-- *Poder mostrar item a item sem sair dos detalhes -->
-<div class="form-content my-1 mx-1 p-1">
+<div class="form-content my-3">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-8">
@@ -40,6 +40,7 @@
                                 <a href="{% url 'deletar' object.pk %}" title="Deletar" class="btn btn-danger mx-2 mybtn"
                                 data-toggle="modal" data-target="#exampleModal{{ object.pk }}">
                                 <i class="fa fa-trash-o icon-eye" aria-hidden="true"></i></a>
+
                                 <!-- Modal -->
                             <div class="modal fade" id="exampleModal{{ object.pk }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
@@ -58,12 +59,10 @@
                                         <div class="modal-footer mydiv">
                                             <button type="submit" title="Deletar" class="btn btn-danger btn-sm mybtn mymodalbutton">Deletar</button>
                                             <button type="button" title="Voltar" class="btn btn-primary btn-sm mybtn" data-dismiss="modal">Voltar</button>
-                                        </div></form>
+                                        </div></form></center><br>
                                     </div>
                                 </div>
                             </div>
-                        </center>   
-                        <br>
                         </div>
                     </div>
                 </div>
@@ -76,14 +75,4 @@
 <h2>Você não está autorizado a acessar essa pagina, <a href="{% url 'login' %}">clique aqui</a>para ser redirecionado a pagina de login</h2>
 {% endif %}
 
-{% endblock %}
-
-{% block footer %}
-<footer class="footer">
-    <div class="container">
-        <center><span class="text">Desenvolvido por Dione Rafael Padilha, 
-            <a href="https://www.linkedin.com/in/dione-padilha-a99864234/" target="_blank" class="btn btn-primary btn-sm mybtn">Linkedin</a> e 
-            <a href="https://github.com/Dio30" target="_blank" class="btn btn-dark btn-sm mybtn">GitHub</a></span></center>
-    </div>
-</footer>
 {% endblock %}

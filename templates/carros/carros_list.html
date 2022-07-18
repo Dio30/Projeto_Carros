@@ -57,34 +57,33 @@
             <td><a href="{% url 'deletar' carro.pk %}" title="Deletar" class="btn btn-danger btn-sm mybtn"
                 data-toggle="modal" data-target="#exampleModal{{ carro.pk }}">
                 <i class="fa fa-trash-o icon-eye" aria-hidden="true"></i></a>
-                <!-- Modal -->
-            <div class="modal fade" id="exampleModal{{ carro.pk }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header mydiv">
-                            <h5 class="modal-title" id="exampleModalLabel">Tem certeza que deseja deletar o carro {{ carro.nome_do_carro }}?</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span title="Fechar" aria-hidden="true">&times;</span></button>
+
+                    <!-- Modal -->
+                <div class="modal fade" id="exampleModal{{ carro.pk }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header mydiv">
+                                <h5 class="modal-title" id="exampleModalLabel">Tem certeza que deseja deletar o carro {{ carro.nome_do_carro }}?</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span title="Fechar" aria-hidden="true">&times;</span></button>
+                            </div>
+                            <div class="modal-body mydiv">
+                                <form method="post" action="{% url 'deletar' carro.pk %}">
+                                    {% csrf_token %}
+                                    <img src="{{ carro.image_url|default_if_none:'#' }}" style="max-width:290px" alt="" 
+                                        title="Foto de {{ user.username }}" crossorigin="anonymous">
+                            </div>
+                            <div class="modal-footer mydiv">
+                                <button type="submit" title="Deletar" class="btn btn-danger btn-sm mybtn mymodalbutton">Deletar</button>
+                                <button type="button" title="Voltar" class="btn btn-primary btn-sm mybtn" data-dismiss="modal">Voltar</button>
+                            </div></form>
                         </div>
-                        <div class="modal-body mydiv">
-                            <form method="post" action="{% url 'deletar' carro.pk %}">
-                                {% csrf_token %}
-                                <img src="{{ carro.image_url|default_if_none:'#' }}" style="max-width:290px" alt="" 
-                                    title="Foto de {{ user.username }}" crossorigin="anonymous">
-                        </div>
-                        <div class="modal-footer mydiv">
-                            <button type="submit" title="Deletar" class="btn btn-danger btn-sm mybtn mymodalbutton">Deletar</button>
-                            <button type="button" title="Voltar" class="btn btn-primary btn-sm mybtn" data-dismiss="modal">Voltar</button>
-                        </div></form>
                     </div>
                 </div>
-            </div>
-        </td>
-    </tr>
-        {% endfor %}
+            </td>
+        </tr>{% endfor %}
     </tbody>
 </table>
-
 
 <center><a href="{% url 'novo' %}" class="btn btn-primary mybtn">Adicionar Carro</a></center><br>
     
@@ -155,10 +154,9 @@
 {% block footer %}
 <footer class="footer">
     <div class="container">
-        <br><br>
         <center><span class="text">Desenvolvido por Dione Rafael Padilha,
         <a href="https://www.linkedin.com/in/dione-padilha-a99864234/" target="_blank" class="btn btn-primary btn-sm mybtn">Linkedin</a> e 
-        <a href="https://github.com/Dio30" target="_blank" class="btn btn-dark btn-sm mybtn">GitHub</a></span></center><br>
+        <a href="https://github.com/Dio30" target="_blank" class="btn btn-dark btn-sm mybtn">GitHub</a></span></center>
     </div>
 </footer>
 {% endblock %}

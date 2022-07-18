@@ -12,11 +12,11 @@
 
 {% if user.is_authenticated %}
 
-<div class="form-content my-4">
+<div class="form-content my-5">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-5">
-                <div class="card shadow-lg border-1 rounded-lg mt-0 mb-3">
+                <div class="card shadow-lg border-1 rounded-lg mt-2 mb-3">
                     <div class="card-header justify-content-center mycardheader">
                         <h3 class="font-weight-dark my-2 text-center">Perfil de {{ user.username }}</h3>
                     </div>
@@ -36,22 +36,21 @@
                                 placeholder="Email" autocomplete="off" value="{{ user.email }}" spellcheck="false" name='email'>
                                 <label for="inputUser">Email</label>
                             </div>
-                            <br>
                             <center><input type="submit" class="btn btn-success mx-3 mybtn" value="Salvar">
                             <a href="{% url 'lista' %}" class="btn btn-primary mx-3 mybtn">Voltar</a></center>
                         </form>
+                        <br>
+                        <li class="mytext_perfil">O preenchimento do email <u>não é obrigatório</u>.</li>
+                        <br>
+                        <li class="mytext_perfil">Se quiser somente trocar a sua senha clique em <a href="{% url 'password_change' %}" class="my_a2">alterar senha</a>,
+                        se esqueceu da senha será <u>obrigatório cadastrar algum email válido aqui</u> e depois 
+                        <a href="{% url 'password_reset' %}" class="my_a2">clique aqui</a> para enviar o email.</li>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
-    <b class="mytext_perfil"><li>O preenchimento do email não é obrigatório.</li>
-    <br>
-    <li>Se quiser somente trocar a sua senha clique em <a href="{% url 'password_change' %}" class="my_a2">alterar senha</a>,
-    se esqueceu da senha será <u>obrigatório cadastrar algum email válido aqui</u> e depois 
-    <a href="{% url 'password_reset' %}" class="my_a2">clique aqui</a> para enviar o email.</li></b>
     
     {% else %}
     <h2>Você não está autorizado a acessar essa pagina, <a href="{% url 'login' %}">clique aqui   
@@ -63,7 +62,7 @@
 {% block footer %}
 <footer class="footer">
     <div class="container">
-        <br><br>
+        
         <center><span class="text">Desenvolvido por Dione Rafael Padilha, 
             <a href="https://www.linkedin.com/in/dione-padilha-a99864234/" target="_blank" class="btn btn-primary btn-sm mybtn">Linkedin</a> e 
             <a href="https://github.com/Dio30" target="_blank" class="btn btn-dark btn-sm mybtn">GitHub</a></span></center>

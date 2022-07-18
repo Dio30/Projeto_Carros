@@ -27,16 +27,15 @@
                             <u>Itens com * são obrigatórios</u>
                             <br><br>
                             <div class="form-label-group">
-                                <input name='username' type="text" class="form-control" id="inputUser" placeholder="Usuário"
+                                <input name="username" type="text" class="form-control" id="inputUser" placeholder="Usuário"
                                 autocomplete="off" spellcheck="false" autocapitalize="off" required autofocus>
                                 <label for="inputUser">Usuário*</label>
                                 <font class='mytext'>{{ form.username.errors }}</font>
                                 <font class="text-muted">Obrigatório 3 caracteres ou mais. Letras, números e @/./+/-/_ apenas. 
-                                Por favor não cadastre um usuário todo em letras maiusculas. (Não deixar o CAPSLOCK ligado)</font>
+                                Por favor não cadastre um usuário todo em letras maiusculas. (Não deixe o CAPSLOCK ligado)</font>
                             </div>
                             
                             <div class="form-label-group">
-                                
                                 <input name='email' type="email" id="inputEmail" class="form-control" placeholder="Email"
                                 autocomplete="off" spellcheck="false" autocapitalize="off">
                                 <label for="inputEmail">Email</label>
@@ -50,13 +49,13 @@
                                 <label for="inputPassword">Senha*</label>
                                 <img src="https://icon-library.com/images/icon-eyes/icon-eyes-12.jpg" class="myimg" onclick="mostrarSenha()">
                             </div>
-
                             <ul class="text-muted">
                                 <li>Sua senha não pode ser muito parecida com o resto das suas informações pessoais.</li>
                                 <li>Sua senha precisa conter pelo menos 8 caracteres.</li>
                                 <li>Sua senha não pode ser uma senha comumente utilizada.</li>
                                 <li>Sua senha não pode ser inteiramente numérica.</li>
                             </ul>
+                            
                             <div class="form-label-group">
                                 <input name='password2' type="password" id="inputPassword3" placeholder="Confirmar Senha"
                                 class="form-control" autocomplete="off" spellcheck="false" required>

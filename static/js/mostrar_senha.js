@@ -65,3 +65,6 @@ function registrarPassword(){
 		press.src = 'https://icon-library.com/images/icon-eyes/icon-eyes-12.jpg'
 	}
 }
+
+if (document.querySelector('body').offsetHeight > window.innerHeight)
+          document.querySelector('footer').classList.add('footer-relative');
