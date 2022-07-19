@@ -24,14 +24,10 @@
                         <form method="POST" action="{% url 'login' %}" autocomplete="off">
                             {% csrf_token %}
 
-                            {% if form.errors %}
-                                <p class='mytext'>Usuário ou senha invalidos. Por favor tente de novo.</p>
-                            {% endif %}
-
-                              {% if form.non_field_errors %} <!--Erro caso o usuario estiver incorreto-->
-                                    {% for error in form.non_field_errors %}
-                                        <li class='mytext'>{{ error }}</li>
-                                    {% endfor %}
+                            {% if form.non_field_errors %} <!--Erro caso o usuario estiver incorreto-->
+                                {% for error in form.non_field_errors %}
+                                    <li class='mytext'>{{ error }}</li>
+                                {% endfor %}
                             {% endif %}
                             <br>
                             <div class="form-label-group">
