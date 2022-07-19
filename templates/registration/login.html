@@ -15,7 +15,7 @@
 <div class="form-content my-3">
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-lg-5">
+            <div class="col-lg-6">
                 <div class="card shadow-lg border-1 rounded-lg mt-1 mb-1">
                     <div class="card-header justify-content-center mycardheader">
                         <h2 class="font-weight-dark my-8 text-center">Login</h2>
@@ -24,35 +24,34 @@
                         <form method="POST" action="{% url 'login' %}" autocomplete="off">
                             {% csrf_token %}
 
-                            {% if form.non_field_errors %}
-                                <ul class='form-errors'>
+                            {% if form.errors %}
+                                <p class='mytext'>Usuário ou senha invalidos. Por favor tente de novo.</p>
+                            {% endif %}
+
+                              {% if form.non_field_errors %} <!--Erro caso o usuario estiver incorreto-->
                                     {% for error in form.non_field_errors %}
                                         <li class='mytext'>{{ error }}</li>
                                     {% endfor %}
-                                </ul>
                             {% endif %}
-                    
+                            <br>
                             <div class="form-label-group">
                                 <input name='username' type="text" id="inputUser" class="form-control"  
                                 placeholder="Usuário" autocomplete="off" spellcheck="false" autocapitalize="off" required autofocus>
                                 <label for="inputUser">Usuário</label>
                             </div>
-
-                            <!--{% if form.non_field_errors %}
-                                <ul class='form-errors'>
-                                    {% for error in form.non_field_errors %}
-                                        <li class='mytext'>{{ error.form.password }}</li>
-                                    {% endfor %}
-                                </ul>
-                            {% endif %}-->
-                    
+                            
                             <div class="form-label-group">
                                 <input name='password' type="password" id="inputPassword" class="form-control"
                                     placeholder="Senha" autocomplete="off" required>
                                 <label for="inputPassword">Senha</label>
                                 <img src="https://icon-library.com/images/icon-eyes/icon-eyes-12.jpg" class="myimg" onclick="mostrarSenha()">
                             </div>
-                                
+                            {% if form.password.errors %}
+                                {% for error in form.password.errors %}
+                                    <p class='mytext'>{{ error }}</p>
+                                {% endfor %}
+                            {% endif %}
+                            
                             <a href="{% url 'password_reset' %}" class="my_a">Esqueci minha senha</a>
                             <br><br>
                             <center><button type="submit" class="col-md-4 btn btn-primary mybtn">Entrar</button></center>

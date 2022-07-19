@@ -144,7 +144,7 @@ body{ /* o corpo de todo o site */
 }
 
 .mydetail{ /* para deixar os itens na area do detalhe na cor definida */
-    color: #00ddff;
+    color: #ffffff;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
     font-size: 105%;
 }
@@ -173,8 +173,6 @@ body{ /* o corpo de todo o site */
   color:#b21e1e;
   font-size: 85%;
   font-family:Verdana, Geneva, Tahoma, sans-serif;
-  padding-top: 10px;
-  line-height: 1.6;
 }
 
 .invalid-feedback{ /* mensagem de erro caso digitar algum campo errado no cadastro de usuarios*/
