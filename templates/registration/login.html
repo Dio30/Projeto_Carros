@@ -25,26 +25,39 @@
                             {% csrf_token %}
 
                             {% if form.non_field_errors %}
-                                <p class="mytext">Usuário ou senha invalidos, tente novamente. 
-                                    O login não diferencia letras maiusculas de minusculas.</p>
+                                <ul class='form-errors'>
+                                    {% for error in form.non_field_errors %}
+                                        <li class='mytext'>{{ error }}</li>
+                                    {% endfor %}
+                                </ul>
                             {% endif %}
-
+                    
                             <div class="form-label-group">
                                 <input name='username' type="text" id="inputUser" class="form-control"  
                                 placeholder="Usuário" autocomplete="off" spellcheck="false" autocapitalize="off" required autofocus>
                                 <label for="inputUser">Usuário</label>
                             </div>
-                            
+
+                            <!--{% if form.non_field_errors %}
+                                <ul class='form-errors'>
+                                    {% for error in form.non_field_errors %}
+                                        <li class='mytext'>{{ error.form.password }}</li>
+                                    {% endfor %}
+                                </ul>
+                            {% endif %}-->
+                    
                             <div class="form-label-group">
                                 <input name='password' type="password" id="inputPassword" class="form-control"
                                     placeholder="Senha" autocomplete="off" required>
                                 <label for="inputPassword">Senha</label>
                                 <img src="https://icon-library.com/images/icon-eyes/icon-eyes-12.jpg" class="myimg" onclick="mostrarSenha()">
                             </div>
-                            
+                                
                             <a href="{% url 'password_reset' %}" class="my_a">Esqueci minha senha</a>
                             <br><br>
-                            <center><button type="submit" class="col-md-4 btn btn-primary mybtn">Entrar</button></center><hr color="black">
+                            <center><button type="submit" class="col-md-4 btn btn-primary mybtn">Entrar</button></center>
+                            <input type="hidden" name="next" value="{{ next }}" />
+                            <hr color="black">
                             
                             <p class="text-center">Não tem uma conta? <a href="{% url 'cadastro' %}" class="my_a">Crie uma conta aqui</a>.</p>
                             <center><a href="https://www.linkedin.com/in/dione-padilha-a99864234/" 
