@@ -26,7 +26,7 @@
 
                             {% if form.non_field_errors %} <!--Erro caso o usuario estiver incorreto-->
                                 {% for error in form.non_field_errors %}
-                                    <li class='mytext'>{{ error }}</li>
+                                    <li class='mytext'>{{ error }}, verifique também se a senha está correta.</li>
                                 {% endfor %}
                             {% endif %}
                             <br>
@@ -44,7 +44,7 @@
                             </div>
                             {% if form.password.errors %}
                                 {% for error in form.password.errors %}
-                                    <p class='mytext'>{{ error }}</p>
+                                    <p class='mytext'>{{ password.error }}</p>
                                 {% endfor %}
                             {% endif %}
                             

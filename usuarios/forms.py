@@ -27,7 +27,7 @@ class UsuariosForm(UserCreationForm):# formulario para o cadastro de novos usuar
     
 class UsuariosLoginForm(AuthenticationForm):
     username = forms.CharField(max_length=255, required=True)
-    password = forms.CharField(widget=forms.PasswordInput, required=True, error_messages=({'invalid':'A senha está incorreta'}))
+    password = forms.CharField(widget=forms.PasswordInput, required=True)
     
     def clean(self, *args, **kwargs):
         username = self.cleaned_data.get('username')
@@ -35,9 +35,9 @@ class UsuariosLoginForm(AuthenticationForm):
         user = authenticate(username=username, password=password)
         if username and password:
             if not user :
-                raise forms.ValidationError('O usuário {} não existe, tente novamente'.format(username))
+                raise forms.ValidationError('O usuário {} não existe'.format(username))
             if not user.check_password(password):
-                raise forms.ValidationError(('A senha está incorreta'), code='invalid')
+                raise forms.ValidationError('A senha está incorreta')
             if not user.is_active:
                 raise forms.ValidationError('O usuário {} não está ativo.'.format(username))
         return super(UsuariosLoginForm, self).clean(*args, **kwargs)
