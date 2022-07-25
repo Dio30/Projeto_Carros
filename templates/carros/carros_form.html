@@ -2,7 +2,7 @@
 
 {% load static %}
 
-{% load bootstrap %}
+{% load crispy_forms_tags %}
 
 {% load humanize %}
 
@@ -17,23 +17,14 @@
 <center><h2 class="mytext_form"><u>{{ titulo }} {{ object.nome_do_carro }}</u></h2></center>
     <form method="POST" action="." enctype="multipart/form-data" autocomplete="off">
         {% csrf_token %}
-        <b class="mytext_form">{{ form|bootstrap }}</b>
+        <b class="mytext_form">{{ form|crispy }}</b><br>
         <center><input type="submit" value="Salvar" class="btn btn-success mx-4 mybtn">
         <a href="{% url 'lista' %}" class="btn btn-primary mx-4 mybtn">Voltar</a></center>
     </form>
-<br><br><br><br>
+<br>
     {% else %}
     <h2>Você não está autorizado a acessar essa pagina, 
     <a href="{% url 'login' %}">clique aqui</a>para ser redirecionado a pagina de login</h2>
     {% endif %}
-{% endblock %}
 
-{% block footer %}
-<footer class="footer">
-    <div class="container">
-        <center><span class="text">Desenvolvido por Dione Rafael Padilha, 
-        <a href="https://www.linkedin.com/in/dione-padilha-a99864234/" target="_blank" class="btn btn-primary btn-sm mybtn">Linkedin</a> e 
-        <a href="https://github.com/Dio30" target="_blank" class="btn btn-dark btn-sm mybtn">GitHub</a></span></center>
-    </div>
-</footer><br><br>
 {% endblock %}
