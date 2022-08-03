@@ -26,12 +26,14 @@
                             {% csrf_token %}
 
                             <div class="form-label-group">
+                                <span class="fa fa-user"></span>
                                 <input type="text" id="inputUser" class="form-control"  
                                 placeholder="Usuário" autocomplete="off" value="{{ user.username }}" spellcheck="false" name='username' required>
                                 <label for="inputUser">Usuário</label>
                             </div>
                             <br>
                             <div class="form-label-group">
+                                <span class="fa fa-envelope"></span>
                                 <input type="email" id="inputUser" class="form-control"  
                                 placeholder="Email" autocomplete="off" value="{{ user.email }}" spellcheck="false" name='email'>
                                 <label for="inputUser">Email</label>

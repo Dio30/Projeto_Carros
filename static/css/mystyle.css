@@ -257,6 +257,25 @@ body{ /* o corpo de todo o site */
 	cursor: pointer;
 }
 
+.fa-user, .fa-lock{ /* icon user e password no login */
+  position: absolute;
+  top: 30%;
+  left: 10px;
+}
+
+.user{ /* icon user na registro */
+  position: absolute;
+  top: .90rem;
+  left: 10px;
+}
+
+.fa-envelope{ /* icon email na registro */
+  position: absolute;
+  top: .99rem;
+  left: 10px;
+  font-size: 85%;
+}
+
 .form-label-group { /* suporte para o login dinamico */
   position: relative;
   margin-bottom: 1rem;
@@ -267,6 +286,7 @@ body{ /* o corpo de todo o site */
   height: 3.125rem;
   padding: .75rem;
   padding-right: 40px;
+  padding-left: 30px;
 }
 
 .form-label-group label { /* suporte para o login dinamico */
@@ -305,6 +325,7 @@ body{ /* o corpo de todo o site */
 
 .form-label-group input::placeholder { /* suporte para o login dinamico */
   color: transparent;
+  
 }
 
 .form-label-group input:not(:-moz-placeholder-shown) { /* suporte para o login dinamico */

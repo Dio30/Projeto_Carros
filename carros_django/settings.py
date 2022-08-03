@@ -38,12 +38,12 @@ INSTALLED_APPS = [
     'django.contrib.humanize',
     'django.contrib.postgres',
     # meus apps
-    'bootstrapform',
     'static',
     'carros',
     'usuarios',
     'storages',
     'crispy_forms',
+    'bootstrapform',
     'django_cleanup.apps.CleanupConfig',
 ]
 
@@ -141,6 +141,9 @@ LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'lista'
 LOGOUT_REDIRECT_URL = 'login'
 SESSION_COOKIE_AGE = 172800 # quantos segundos a pagina ficará aberta até voltar ao login (2 dias)
+SESSION_COOKIE_SECURE = True #para maior segurança quando enviar email para redefinir senha
+CSRF_COOKIE_SECURE = True
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
