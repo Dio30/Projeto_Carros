@@ -12,7 +12,7 @@
 
 {% if user.is_authenticated %}
 
-<div class="form-content">
+<div class="form-content my-4">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-6">
@@ -38,10 +38,10 @@
                                 placeholder="Email" autocomplete="off" value="{{ user.email }}" spellcheck="false" name='email'>
                                 <label for="inputUser">Email</label>
                             </div>
-                            <center><input type="submit" class="btn btn-success mx-3 mybtn" value="Salvar">
-                            <a href="{% url 'lista' %}" class="btn btn-primary mx-3 mybtn">Voltar</a></center>
+                            <input type="submit" class="btn btn-success mybtn mx-3 mymodalbutton" value="Salvar">
+                            <a href="{% url 'lista' %}" class="btn btn-primary mybtn mx-2 mymodalbutton2">Voltar</a>
                         </form>
-                        <br>
+                        <br><br>
                         <li class="mytext_perfil">O preenchimento do email <u>não é obrigatório</u>.</li>
                         <br>
                         <li class="mytext_perfil">Se quiser somente trocar a sua senha clique em <a href="{% url 'password_change' %}" class="my_a2">alterar senha</a>,
@@ -64,6 +64,7 @@
 {% block footer %}
 <footer class="footer">
     <div class="container">
+        <br>
         <center><span class="text">Desenvolvido por Dione Rafael Padilha, 
         <a href="https://www.linkedin.com/in/dione-padilha-a99864234/" target="_blank" class="btn btn-primary btn-sm mybtn">Linkedin</a> e 
         <a href="https://github.com/Dio30" target="_blank" class="btn btn-dark btn-sm mybtn">GitHub</a></span></center>

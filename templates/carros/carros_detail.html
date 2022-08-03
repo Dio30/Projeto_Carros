@@ -28,7 +28,7 @@
                             <p>Valor:<b class="mydetail"> {{ object.valor_do_carro }}</b></p><hr color="white">
                             <p>Motor:<b class="mydetail"> {{ object.modelos_de_carros }}</b></p><hr color="white">
                             <p>Turbo:<b class="mydetail"> {{ object.motorizacao }}</b></p><hr color="white">
-                            <p>Foto: <img src="{{ object.image_url|default_if_none:'#' }}" style="max-width:240px" alt="" 
+                            <p>Foto: <img src="{{ object.image_url|default_if_none:'#' }}" style="max-width:250px" alt="" 
                             title="Foto de {{ user.username }}" crossorigin="anonymous"></p></b>
 
                             <center><a href="{% url 'lista' %}" title="Voltar a Lista" class="btn btn-primary mx-2 mybtn">

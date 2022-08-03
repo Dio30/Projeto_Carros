@@ -15,7 +15,7 @@ body{ /* o corpo de todo o site */
     min-height: 100vh;
 }
 
-.footer{
+.footer{ /* para o rodapé */
   position: absolute;
   bottom: 0;
   box-sizing: border-box;
@@ -24,6 +24,7 @@ body{ /* o corpo de todo o site */
   line-height: 30px;
   margin: 0;
   margin-top: auto;
+  color: #ffffff;
 }
 
 .mydiv{
@@ -36,6 +37,11 @@ body{ /* o corpo de todo o site */
   margin-left: 15px;
   position:absolute;
   left: 1px;
+}
+
+.mymodalbutton2{
+  position:absolute;
+  right: 15px;
 }
 
 .mythead{ /* tabela head */
@@ -150,12 +156,12 @@ body{ /* o corpo de todo o site */
   border-color: #000000;
 }
 
-.footer{ /* para o rodapé */
-    color: #ffffff;
-}
-
 .my_a{ /* para deixar os links numa cor mais agradavel */
     color: #110eba;
+}
+
+.my_a2{
+  color: #b5b520;
 }
 
 .text-muted { /* texto para auxuliar quando fazer cadastro */
