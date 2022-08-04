@@ -7,9 +7,9 @@ from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from django.views.generic.detail import DetailView
 from django.contrib import messages
 from django.contrib.auth.models import User
-from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import PasswordChangeView
-from .forms import CarrosForm, PasswordForm
+from .forms import CarrosForm, PasswordForm, PerfilForm
+from django.contrib.auth.decorators import login_required
 
 class CarrosList(LoginRequiredMixin, ListView): # para listar os itens
     model = Carros
@@ -101,18 +101,17 @@ def perfil(request): # onde é possivel alterar o usuario e adicionar/editar o e
         usuario = User.objects.filter(username=username).exclude(id=request.user.id)
         
         if usuario.exists():
-            messages.error(request, "Já existe um usuario com esse nome")
+            messages.error(request, f"Já existe um usuario com esse nome: {username}")
             return render(request, template_name='carros/perfil.html')
         
         meu_email = User.objects.filter(email=email).exclude(id=request.user.id)
         
         if meu_email.exists():
-            messages.error(request, "Já existe um usuario com esse email")
+            messages.error(request, f"Já existe um usuario com esse email: {email}")
             return render(request, template_name='carros/perfil.html')
         
         request.user.username = username
         request.user.email = email
         request.user.save()
         messages.success(request, "Dados alterados com sucesso")
-       
-    return redirect('lista')
+    return render(request, 'carros/perfil.html')

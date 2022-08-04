@@ -1,5 +1,5 @@
 from django import forms
-from .models import Carros
+from .models import Carros, Perfil
 from django.contrib.auth.forms import PasswordChangeForm
 from django.contrib.auth.models import User
 
@@ -25,3 +25,10 @@ class PasswordForm(PasswordChangeForm):
     class Meta:
         model = User
         fields = ("old_password", "new_password1", "new_password2")
+        
+class PerfilForm(forms.ModelForm):
+    class Meta:
+        model = Perfil
+        fields = '__all__'
+        exclude = ['usuario', 'username','email']
+        

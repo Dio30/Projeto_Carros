@@ -2,12 +2,10 @@
 
 {% load crispy_forms_tags %}
 
-{% crispy form form.helper %}
-
 {% block main %}
 
 {% for message in messages %}
-
+<br>
 <div class="container-fluid p-0">
   <div class="alert {{ message.tags }} alert-dismissible" role="alert" >
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">

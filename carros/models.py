@@ -142,3 +142,17 @@ class Carros(models.Model): # modelo para o CRUD de carros
     def image_url(self):
         if self.fotos_de_carros and hasattr(self.fotos_de_carros, 'url'):
             return self.fotos_de_carros.url
+
+class Perfil(models.Model):
+    username= models.CharField(max_length=200)
+    email= models.CharField(max_length=200, null=True, blank=True)
+    foto = models.ImageField(upload_to='clients_photos', null=True, blank=True, verbose_name='Foto:')
+    usuario = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
+    
+    class Meta:
+        verbose_name = 'Perfil'
+        verbose_name_plural = 'Perfis'
+        ordering = ['foto',]
+    
+    def __str__(self):
+        return self.username
