@@ -1,4 +1,4 @@
-from django.shortcuts import get_object_or_404, render, redirect
+from django.shortcuts import get_object_or_404, render
 from .models import Carros
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -8,7 +8,7 @@ from django.views.generic.detail import DetailView
 from django.contrib import messages
 from django.contrib.auth.models import User
 from django.contrib.auth.views import PasswordChangeView
-from .forms import CarrosForm, PasswordForm, PerfilForm
+from .forms import CarrosForm, PasswordForm, EditPerfil
 from django.contrib.auth.decorators import login_required
 
 class CarrosList(LoginRequiredMixin, ListView): # para listar os itens
@@ -91,7 +91,7 @@ class ChangePasswordView(LoginRequiredMixin, SuccessMessageMixin, PasswordChange
     login_url = reverse_lazy('login') # se alguem tentar entrar em alguma pagina sem estar autenticado será redirecionado para o login
 
 @login_required(login_url ='login')
-def perfil(request): # onde é possivel alterar o usuario e adicionar/editar o email
+def edit_perfil(request): # onde é possivel alterar o usuario e adicionar/editar o email
     if request.method == "GET":
         return render(request, 'carros/perfil.html')
     
@@ -99,6 +99,11 @@ def perfil(request): # onde é possivel alterar o usuario e adicionar/editar o e
         username = request.POST.get('username')
         email = request.POST.get('email')
         usuario = User.objects.filter(username=username).exclude(id=request.user.id)
+        form = EditPerfil(request.POST, request.FILES)
+        
+        if form.is_valid():
+            form.save()
+            return render(request, 'carros/perfil.html')
         
         if usuario.exists():
             messages.error(request, f"Já existe um usuario com esse nome: {username}")
@@ -114,4 +119,9 @@ def perfil(request): # onde é possivel alterar o usuario e adicionar/editar o e
         request.user.email = email
         request.user.save()
         messages.success(request, "Dados alterados com sucesso")
-    return render(request, 'carros/perfil.html')
+        
+    else:
+        form = EditPerfil()
+        
+    context= {'form': form}
+    return render(request, 'carros/perfil.html', context)

@@ -1,7 +1,8 @@
 from django import forms
 from .models import Carros, Perfil
-from django.contrib.auth.forms import PasswordChangeForm
+from django.contrib.auth.forms import PasswordChangeForm, UserChangeForm
 from django.contrib.auth.models import User
+from django.forms.widgets import ClearableFileInput
 
 motorizacao = [
     ('Sim', 'Sim'),
@@ -26,9 +27,8 @@ class PasswordForm(PasswordChangeForm):
         model = User
         fields = ("old_password", "new_password1", "new_password2")
         
-class PerfilForm(forms.ModelForm):
+class EditPerfil(UserChangeForm):
+    foto = forms.ImageField(widget=ClearableFileInput, required=False)
     class Meta:
-        model = Perfil
+        model = User
         fields = '__all__'
-        exclude = ['usuario', 'username','email']
-        

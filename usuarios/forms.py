@@ -29,6 +29,13 @@ class UsuariosLoginForm(AuthenticationForm):
     username = forms.CharField(max_length=255, required=True)
     password = forms.CharField(widget=forms.PasswordInput, required=True)
     
+    class Meta:
+        error_messages = {
+            'password': {
+                'error': 'A senha está incorreta',
+            }
+        }
+    
     def clean(self, *args, **kwargs):
         username = self.cleaned_data.get('username')
         password = self.cleaned_data.get('password')

@@ -27,19 +27,37 @@ body{ /* o corpo de todo o site */
   color: #ffffff;
 }
 
-.mydiv{
+.table-bordered{ /* para botar borda no head do login */
+  color: #000000;
+  background-color: #ffffff;
+}
+
+.text-center{ /* texto na parte do login */
+  color: #000000;
+}
+
+.mycard{ /* para deixar efeito de vidro no login */
+  backdrop-filter: blur( 2px );
+  -webkit-backdrop-filter: blur( 13.5px );
+  border-radius: 10px;
+  border: ridge 5px #ffffff;
+  background: #bab9b952;
+  font-weight: bold;
+}
+
+.mydiv{ /* para a cor do modal */
   background-color: #939393;
   font-weight: bold;
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.mymodalbutton{
+.mymodalbutton{ /* para deixar o botão do modal para a esquerda */
   margin-left: 15px;
   position:absolute;
   left: 1px;
 }
 
-.mymodalbutton2{
+.mymodalbutton2{ /* para deixar o botão do modal para a direita */
   position:absolute;
   right: 15px;
 }
@@ -132,7 +150,7 @@ body{ /* o corpo de todo o site */
 }
 
 .mynav{ /* para a barra de navegação */
-  backdrop-filter: blur( 0.5px );
+  backdrop-filter: blur( 1px );
   -webkit-backdrop-filter: blur( 13.5px );
   border-radius: 10px;
   border: 1px solid #ffffff2e;
@@ -212,9 +230,9 @@ body{ /* o corpo de todo o site */
 }
 
 .mytext{ /* tive que fazer essa class separada pois não consegui integra-la ao invalid-feedback */
-  color:#b21e1e;
-  font-size: 85%;
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  color:#ea2020fd;
+  font-size: 90%;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .invalid-feedback{ /* mensagem de erro caso digitar algum campo errado no cadastro de usuarios*/

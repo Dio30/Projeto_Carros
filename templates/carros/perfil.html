@@ -14,7 +14,7 @@
 
 {% if user.is_authenticated %}
 
-<div class="form-content my-4">
+<div class="form-content my-5">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-6">
@@ -25,7 +25,7 @@
                     <div class="card-body mybody">
                         <form action="{% url 'perfil' %}" method="POST" enctype="multipart/form-data">
                             {% csrf_token %}
-                            
+                          
                             <div class="form-label-group">
                                 <span class="fa fa-user"></span>
                                 <input type="text" id="inputUser" class="form-control"  
@@ -64,7 +64,6 @@
 {% block footer %}
 <footer class="footer">
     <div class="container">
-        <br>
         <center><span class="text">Desenvolvido por Dione Rafael Padilha, 
         <a href="https://www.linkedin.com/in/dione-padilha-a99864234/" target="_blank" class="btn btn-primary btn-sm mybtn">Linkedin</a> e 
         <a href="https://github.com/Dio30" target="_blank" class="btn btn-dark btn-sm mybtn">GitHub</a></span></center>

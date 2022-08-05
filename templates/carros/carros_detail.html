@@ -15,7 +15,7 @@
 <div class="form-content my-3">
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-lg-8">
+            <div class="col-lg-6">
                 <div class="card shadow-lg border-1 rounded-lg mt-3 mb-2">
                     <div class="card-header justify-content-center mycardheader">
                         <h2 class="font-weight-dark my-8 text-center">Detalhes de {{ object.nome_do_carro }}</h2>
@@ -28,7 +28,7 @@
                             <p>Valor:<b class="mydetail"> {{ object.valor_do_carro }}</b></p><hr color="white">
                             <p>Motor:<b class="mydetail"> {{ object.modelos_de_carros }}</b></p><hr color="white">
                             <p>Turbo:<b class="mydetail"> {{ object.motorizacao }}</b></p><hr color="white">
-                            <p>Foto: <img src="{{ object.image_url|default_if_none:'#' }}" style="max-width:250px" alt="" 
+                            <p>Foto: <img src="{{ object.image_url|default_if_none:'/static/imagens/carro_base.jpg' }}" style="max-width:250px" alt="" 
                             title="Foto de {{ user.username }}" crossorigin="anonymous"></p></b>
 
                             <center><a href="{% url 'lista' %}" title="Voltar a Lista" class="btn btn-primary mx-2 mybtn">
@@ -53,8 +53,8 @@
                                         <div class="modal-body mydiv">
                                             <form method="post" action="{% url 'deletar' object.pk %}">
                                                 {% csrf_token %}
-                                                <img src="{{ object.image_url|default_if_none:'#' }}" style="max-width:290px" alt="" 
-                                                    title="Foto de {{ user.username }}" crossorigin="anonymous">
+                                                <img src="{{ object.image_url|default_if_none:'/static/imagens/carro_base.jpg' }}" 
+                                                style="max-width:290px" alt="" title="Foto de {{ user.username }}" crossorigin="anonymous">
                                         </div>
                                         <div class="modal-footer mydiv">
                                             <button type="submit" title="Deletar" class="btn btn-danger btn-sm mybtn mymodalbutton">Deletar</button>

@@ -146,7 +146,7 @@ class Carros(models.Model): # modelo para o CRUD de carros
 class Perfil(models.Model):
     username= models.CharField(max_length=200)
     email= models.CharField(max_length=200, null=True, blank=True)
-    foto = models.ImageField(upload_to='clients_photos', null=True, blank=True, verbose_name='Foto:')
+    foto = models.FileField(upload_to='clients_photos', null=True, blank=True, verbose_name='Foto:')
     usuario = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
     
     class Meta:

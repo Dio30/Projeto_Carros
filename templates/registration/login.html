@@ -12,24 +12,26 @@
 
 {% include 'mensagens.html' %}
 
-<div class="form-content my-3">
-    <div class="container">
+<div class="form-content my-5">
+    <div class="container"> 
         <div class="row justify-content-center">
             <div class="col-lg-6">
-                <div class="card shadow-lg border-1 rounded-lg mt-1 mb-1">
-                    <div class="card-header justify-content-center mycardheader">
-                        <h2 class="font-weight-dark my-8 text-center">Login</h2>
+                <div class="card shadow-lg border-1 rounded-lg mt-1 mb-5 mycard">
+                    <div class="card-header justify-content-center">
+                        <br>
+                        <h3 class="font-weight-dark my-8 text-center"><table class="table table-bordered">
+                            <th>Login | Carros</th></table></h3>
                     </div>
-                    <div class="card-body mybody">
+                    <div class="card-body">
                         <form method="POST" action="{% url 'login' %}" autocomplete="off">
                             {% csrf_token %}
 
                             {% if form.non_field_errors %} <!--Erro caso o usuario estiver incorreto-->
                                 {% for error in form.non_field_errors %}
-                                    <li class='mytext'>{{ error }}, verifique também se a senha está correta.</li>
+                                    <li class='mytext'>{{ error }}, verifique também se a senha está correta.</li><br>
                                 {% endfor %}
                             {% endif %}
-                            <br>
+                            
                             <div class="form-label-group">
                                 <span class="fa fa-user"></span>
                                 <input name='username' type="text" id="inputUser" class="form-control"  
@@ -46,7 +48,7 @@
                             </div>
                             {% if form.password.errors %}
                                 {% for error in form.password.errors %}
-                                    <p class='mytext'>{{ password.error }}</p>
+                                    <p class='mytext'>{{ error.password }}</p>
                                 {% endfor %}
                             {% endif %}
                             
@@ -58,7 +60,8 @@
                             
                             <p class="text-center">Não tem uma conta? <a href="{% url 'cadastro' %}" class="my_a">Crie uma conta aqui</a>.</p>
                             <center><a href="https://www.linkedin.com/in/dione-padilha-a99864234/" 
-                            target="_blank" class="btn btn-primary mybtn" title="Linkedin"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a> ou 
+                            target="_blank" class="btn btn-primary mybtn" title="Linkedin"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a> 
+                            <b class="text-center">ou</b>
                             <a href="https://github.com/Dio30" target="_blank" class="btn btn-dark mybtn" title="Github">
                                 <i class="fa fa-github" aria-hidden="true"></i></a></center>
                         </form>
