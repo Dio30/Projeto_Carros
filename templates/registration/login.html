@@ -12,7 +12,7 @@
 
 {% include 'mensagens.html' %}
 
-<div class="form-content my-5">
+<div class="form-content my-4">
     <div class="container"> 
         <div class="row justify-content-center">
             <div class="col-lg-6">
@@ -46,15 +46,11 @@
                                 <label for="inputPassword">Senha</label>
                                 <img src="https://icon-library.com/images/icon-eyes/icon-eyes-12.jpg" class="myimg" onclick="mostrarSenha()">
                             </div>
-                            {% if form.password.errors %}
-                                {% for error in form.password.errors %}
-                                    <p class='mytext'>{{ error.password }}</p>
-                                {% endfor %}
-                            {% endif %}
-                            
+                        
                             <a href="{% url 'password_reset' %}" class="my_a">Esqueci minha senha</a>
                             <br><br>
                             <center><button type="submit" class="col-md-4 btn btn-primary mybtn">Entrar</button></center>
+                            
                             <input type="hidden" name="next" value="{{ next }}" />
                             <hr color="black">
                             
@@ -71,11 +67,11 @@
         </div>
     </div>
 </div>
-
 {% endblock %}
 
 {% block footer %}
 <footer class="footer">
+    <br>
     <div class="container">
         <center><span class="text">Desenvolvido por Dione Rafael Padilha</span></center>
     </div>

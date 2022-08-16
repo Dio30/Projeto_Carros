@@ -37,7 +37,7 @@
     </form>
 </center>
 <br>
-<table class="table">
+<center><table class="table-bordered my_table" id="alter">
     <thead class="mythead">
         <tr>
             <th>Nome do Carro</th>
@@ -83,8 +83,8 @@
             </td>
         </tr>{% endfor %}
     </tbody>
-</table>
-
+</table></center>
+<br>
 <center><a href="{% url 'novo' %}" class="btn btn-primary mybtn">Adicionar Carro</a></center><br>
     
 <ul class="pagination justify-content-center">
@@ -154,6 +154,7 @@
 {% block footer %}
 <footer class="footer">
     <div class="container">
+        <br>
         <center><span class="text">Desenvolvido por Dione Rafael Padilha,
         <a href="https://www.linkedin.com/in/dione-padilha-a99864234/" target="_blank" class="btn btn-primary btn-sm mybtn">Linkedin</a> e 
         <a href="https://github.com/Dio30" target="_blank" class="btn btn-dark btn-sm mybtn">GitHub</a></span></center>

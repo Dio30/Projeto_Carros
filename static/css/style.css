@@ -66,33 +66,32 @@ body{ /* o corpo de todo o site */
     background-color:#1f907d;
     color:#000000;
     text-align: center;
-    font-size: 90%;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-weight: bold;
+    line-height: 2rem;
 }
 
 .mytbody{ /* tabela body */
     background-color: #a2a2a2;
-    color:#000000;
     text-align: center;
-    font-size: 85%;
+    font-size: 90%;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
 }
 
-.table-responsive{ /* para deixar a tabela responsiva */
-  overflow-x: hidden;
-  overflow-y: hidden;
-}
-
-.table th, .table td{ /* tabela head e body */
-  padding-left: 6px;
-  padding-right: 6px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-  border-radius: 12px;
-  border: 2.1px solid #494949;
-  -moz-border-radius: 10px;
+.my_table{ /* para estilizar a tabela */
+  line-height: 2.5rem;
+  border-radius: 25px;
+  -moz-border-radius: 25px;
+  width: 100%; /* para deixar a tabela responsiva */
+  min-width: 300px; /* para deixar a tabela responsiva */
+  max-width: 960px; /* para deixar a tabela responsiva */
+  overflow-x: hidden; /* para ocultar as bordas no eixo x */
+  overflow-y: hidden; /* para ocultar as bordas no eixo y */
+  background-color: #094c66;
+  border: 0.5rem;
+  border-style: double;
+  border-collapse: separate;
+  box-shadow: #03fee17d 7px 7px 7px;
 }
 
 .icon-eye{ /* icones na pagina pricipal */
@@ -165,6 +164,7 @@ body{ /* o corpo de todo o site */
     background-color: #868686;
     color: #000000;
     font-weight: bold;
+    line-height: 1.5rem;
 }
 
 .mybodydetail{ /* para as bordas area do detalhe  */
