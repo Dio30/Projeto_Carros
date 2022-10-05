@@ -135,6 +135,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Configuarações do crispy
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap4'
 
 # Autenticação de login e logout
 LOGIN_URL = 'login'
