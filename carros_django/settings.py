@@ -24,7 +24,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = ['site-de-carros-django.herokuapp.com','127.0.0.1', 'https://projeto-carros.up.railway.app/']
+ALLOWED_HOSTS = ['site-de-carros-django.herokuapp.com','127.0.0.1', 'projeto-carros.up.railway.app/']
 
 # Application definition
 
