@@ -1,5 +1,5 @@
 from django import forms
-from .models import Carros, Perfil
+from .models import Carros
 from django.contrib.auth.forms import PasswordChangeForm, UserChangeForm
 from django.contrib.auth.models import User
 from django.forms.widgets import ClearableFileInput
