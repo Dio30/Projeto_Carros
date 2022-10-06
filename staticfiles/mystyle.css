@@ -1,0 +1,415 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,300&display=swap');
+
+@media (min-width: 768px){ /* para deixar o site responsivo */
+    body{max-width: 100%;};
+}
+
+body{ /* o corpo de todo o site */
+    background-color: #c5c5c5;
+    background-image: url("/static/imagens/background.jpg");
+    background-attachment: fixed;
+    background-origin: padding-box;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    min-height: 100vh;
+}
+
+.footer{ /* para o rodapé */
+  position: absolute;
+  bottom: 0;
+  box-sizing: border-box;
+  width: 100%;
+  height: 6rem;
+  line-height: 30px;
+  margin: 0;
+  margin-top: auto;
+  color: #ffffff;
+}
+
+.table-bordered{ /* para botar borda no head do login */
+  color: #000000;
+  background-color: #ffffff;
+}
+
+.text-center{ /* texto na parte do login */
+  color: #000000;
+}
+
+.mycard{ /* para deixar efeito de vidro no login */
+  backdrop-filter: blur( 2px );
+  -webkit-backdrop-filter: blur( 13.5px );
+  border-radius: 10px;
+  border: ridge 5px #ffffff;
+  background: #bab9b952;
+  font-weight: bold;
+}
+
+.mydiv{ /* para a cor do modal */
+  background-color: #939393;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.mymodalbutton{ /* para deixar o botão do modal para a esquerda */
+  margin-left: 15px;
+  position:absolute;
+  left: 1px;
+}
+
+.mymodalbutton2{ /* para deixar o botão do modal para a direita */
+  position:absolute;
+  right: 15px;
+}
+
+.mythead{ /* tabela head */
+    background-color:#1f907d;
+    color:#000000;
+    text-align: center;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    line-height: 2rem;
+}
+
+.mytbody{ /* tabela body */
+    background-color: #a2a2a2;
+    text-align: center;
+    font-size: 90%;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+}
+
+.my_table{ /* para estilizar a tabela */
+  line-height: 2.5rem;
+  border-radius: 25px;
+  -moz-border-radius: 25px;
+  width: 100%; /* para deixar a tabela responsiva */
+  min-width: 300px; /* para deixar a tabela responsiva */
+  max-width: 960px; /* para deixar a tabela responsiva */
+  overflow-x: hidden; /* para ocultar as bordas no eixo x */
+  overflow-y: hidden; /* para ocultar as bordas no eixo y */
+  background-color: #094c66;
+  border: 0.5rem;
+  border-style: double;
+  border-collapse: separate;
+  box-shadow: #03fee17d 7px 7px 7px;
+}
+
+.icon-eye{ /* icones na pagina pricipal */
+    color: #000000;
+}
+
+.mybtn{ /* botões */
+    color: #ffffff;
+    box-shadow: #03fee17d 4px 3px 5px;
+    border-radius: 10px;
+    border-top: 1px;
+    border-bottom: 1px;
+    transition: transform 200ms, box-shadow 200ms;
+}
+
+.mybtn:active{ /* botões */
+  transform:translateY(5px) translateX(5px);
+  box-shadow: #094c66 5px 5px 5px;
+}
+
+#divBusca{ /* area do campo de pesquisa */
+  background-color:#E0EEEE;
+  border:solid 2px #5F9EA0;
+  border-radius:10px;
+  width: 270px;
+  max-width: 100%;
+  height: 35px;
+  max-height: 100%;
+}
+
+#txtBusca{ /* tamanho do texto de pesquisa */
+  float:left;
+  background-color:transparent;
+  padding-left:5px;
+  font-size:16px;
+  border:transparent;
+  height:30px;
+  width:160px;
+}
+
+#btnBusca{ /* botão de pesquisar */
+  border:none;
+  height: 31px;
+  border-radius: 2px 2px 2px 2px;
+  width: 30px;
+  background:#5F9EA0;
+  cursor: pointer;
+}
+
+.mysearchclear{ /* botao de limpar da pesquisa */
+  color: #20b59c;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 95%;
+  box-sizing: border-box;
+}
+
+.mynav{ /* para a barra de navegação */
+  backdrop-filter: blur( 1px );
+  -webkit-backdrop-filter: blur( 13.5px );
+  border-radius: 10px;
+  border: 1px solid #ffffff2e;
+  background: #ababab4b;
+}
+
+.mycardheader{ /* para deixar os itens no card-header na cor definida */
+    background-color: #ababab;
+}
+
+.mybody{ /* para deixar os itens no card-body na cor definida */
+    background-color: #868686;
+    color: #000000;
+    font-weight: bold;
+    line-height: 1.5rem;
+}
+
+.mybodydetail{ /* para as bordas area do detalhe  */
+  background-color: #818181;
+  font-weight: bold;
+  border-style: groove;
+  border-color: #000000;
+}
+
+.my_a{ /* para deixar os links numa cor mais agradavel */
+    color: #110eba;
+}
+
+.my_a2{
+  color: #b5b520;
+}
+
+.text-muted { /* texto para auxuliar quando fazer cadastro */
+    color: #414141!important;
+    font-size: 85%;
+    font-weight: bold;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.text-muted2 { /* texto para auxuliar quando trocar a senha */
+  color: #414141!important;
+  font-size: 85%;
+  font-weight: bold;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  padding-bottom: 20px;
+}
+
+.myindice { /* indice do detalhe */
+    color: #000000;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 110%;
+}
+
+.mydetail{ /* para deixar os itens na area do detalhe na cor definida */
+    color: #ffffff;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
+    font-size: 105%;
+}
+
+.my_h2{ /* o "bem vindo na pagina inicial" */
+    color: #ffffff;
+}
+
+.my_u{ /* sublinhado no "Bem vindo" */
+    color: #c7c7c7;
+}
+
+.mytext_perfil{ /* perfil do usuario */
+    color: #000000;
+}
+
+.mytext_form{
+  color: #ffffff;
+}
+
+.my_a2{ /* para deixar os itens na area do perfil na cor definida */
+  color: #0c0cd4;
+}
+
+.mytext{ /* tive que fazer essa class separada pois não consegui integra-la ao invalid-feedback */
+  color:#ea2020fd;
+  font-size: 90%;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.invalid-feedback{ /* mensagem de erro caso digitar algum campo errado no cadastro de usuarios*/
+  color:#b21e1e;
+  font-size: 85%;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.myimg{ /* o olho na parte do login, alterar senha e cadastro*/
+	position: absolute;
+  top: 50%;
+  right: 10px;
+	transform: translateY(-50%);
+  width: 30px;
+	height: 30px;
+	cursor: pointer;
+}
+
+.myimg1{ /* o olho na parte do alterar senha*/
+	position: absolute;
+  top: 50%;
+  right: 10px;
+	transform: translateY(-50%);
+  width: 30px;
+	height: 30px;
+	cursor: pointer;
+}
+
+.myimg2{ /* o olho na parte do alterar senha*/
+	position: absolute;
+  top: 50%;
+  right: 10px;
+	transform: translateY(-50%);
+  width: 30px;
+	height: 30px;
+	cursor: pointer;
+}
+
+.myimg3{ /* o olho na parte do cadastro*/
+	position: absolute;
+  top: 50%;
+  right: 10px;
+	transform: translateY(-50%);
+  width: 30px;
+	height: 30px;
+	cursor: pointer;
+}
+
+.fa-user, .fa-lock{ /* icon user e password no login */
+  position: absolute;
+  top: 30%;
+  left: 10px;
+}
+
+.user{ /* icon user na registro */
+  position: absolute;
+  top: .90rem;
+  left: 10px;
+}
+
+.fa-envelope{ /* icon email na registro */
+  position: absolute;
+  top: .99rem;
+  left: 10px;
+  font-size: 85%;
+}
+
+.form-label-group { /* suporte para o login dinamico */
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.form-label-group input,
+.form-label-group label { /* suporte para o login dinamico */
+  height: 3.125rem;
+  padding: .75rem;
+  padding-right: 40px;
+  padding-left: 30px;
+}
+
+.form-label-group label { /* suporte para o login dinamico */
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  display: block;
+  width: 100%;
+  margin-bottom: 0; /* Override default `<label>` margin */
+  line-height: 1.5;
+  color: #495057;
+  pointer-events: none;
+  cursor: text; /* Match the input under the label */
+  border: 1px solid transparent;
+  border-radius: .25rem;
+  transition: all .1s ease-in-out;
+  font-size: 90%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.form-label-group input::-webkit-input-placeholder { /* suporte para o login dinamico */
+  color: transparent;
+}
+
+.form-label-group input::-moz-placeholder { /* suporte para o login dinamico */
+  color: transparent;
+}
+
+.form-label-group input:-ms-input-placeholder { /* suporte para o login dinamico */
+  color: transparent;
+}
+
+.form-label-group input::-ms-input-placeholder { /* suporte para o login dinamico */
+  color: transparent;
+}
+
+.form-label-group input::placeholder { /* suporte para o login dinamico */
+  color: transparent;
+  
+}
+
+.form-label-group input:not(:-moz-placeholder-shown) { /* suporte para o login dinamico */
+  padding-top: 1.25rem;
+  padding-bottom: .25rem;
+}
+
+.form-label-group input:not(:-ms-input-placeholder) { /* suporte para o login dinamico */
+  padding-top: 1.25rem;
+  padding-bottom: .25rem;
+}
+
+.form-label-group input:not(:placeholder-shown) { /* suporte para o login dinamico */
+  padding-top: 1.25rem;
+  padding-bottom: .25rem;
+}
+
+.form-label-group input:not(:-moz-placeholder-shown) ~ label { /* suporte para o login dinamico */
+  padding-top: .25rem;
+  padding-bottom: .25rem;
+  font-size: 12px;
+  color: #777;
+}
+
+.form-label-group input:not(:-ms-input-placeholder) ~ label { /* suporte para o login dinamico */
+  padding-top: .25rem;
+  padding-bottom: .25rem;
+  font-size: 12px;
+  color: #777;
+}
+
+.form-label-group input:not(:placeholder-shown) ~ label { /* suporte para o login dinamico */
+  padding-top: .25rem;
+  padding-bottom: .25rem;
+  font-size: 12px;
+  color: #777;
+}
+
+.form-label-group input:-webkit-autofill ~ label { /* suporte para o login dinamico */
+  padding-top: .25rem;
+  padding-bottom: .25rem;
+  font-size: 12px;
+  color: #777;
+}
+
+/* Fallback for Edge
+-------------------------------------------------- */
+@supports (-ms-ime-align: auto) { /* suporte para o login dinamico */
+  .form-label-group {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column-reverse;
+    flex-direction: column-reverse;
+  }
+
+  .form-label-group label {
+    position: static;
+  }
+
+  .form-label-group input::-ms-input-placeholder {
+    color: #777;
+  }
+}
