@@ -10,4 +10,4 @@ urlpatterns = [
     path('carros/', include(carros_urls)),
     path('', include(usuarios_urls)),
     
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) # para visualizar arquivos de midia como imagens ou arquivos
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) # para visualizar arquivos de midia como imagens ou arquivos
